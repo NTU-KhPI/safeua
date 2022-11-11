@@ -1,0 +1,55 @@
+.cs {
+	&-wrapper {
+		position: relative;
+		&._disabled {
+			opacity: .333;
+		}
+		select {
+			visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	&-opener {
+		cursor: pointer;
+		display: block;
+		width: 100%;
+		position: relative;
+		z-index: 20;
+	}
+	&-panel {
+		position: absolute;
+		top: calc(100% - 2px);
+		left: 50%;
+		transform: translateX(-50%);
+		max-height: 0;
+
+		overflow: hidden;
+		background-color: transparent;
+		opacity: 0;
+		z-index: 1;
+		min-width: 100%;
+		transition: all 0.3s ease-in 0s, opacity 0.2s ease 0.1s;
+		.cs-wrapper._open & {
+			opacity: 1;
+			max-height: 10em;
+			overflow-y: hidden;
+		}
+	}
+	&-option {
+		cursor: pointer;
+		&._focus {}
+	}
+	&-optgroup {
+		&::before {
+			content: attr(data-label);
+			display: block;
+			padding: 0.5em;
+			color: #888;
+			& > .cs-option {
+				padding-left: 2em;
+			}
+		}
+	}
+}

@@ -1,0 +1,122 @@
+.footer {
+	color: @darktxtcolor;
+	background-color: @footercolor;
+
+	&__container {
+		.adaptiv-value(padding-top, 66, 30);
+		.adaptiv-value(padding-bottom, 64, 28);
+		display: grid;
+		row-gap: 0.7em;
+		grid-template-columns: auto minmax(1fr, 250px) minmax(1fr, 250px) auto;
+		grid-template-areas: "footer-logo footer-menu footer-menu footer-button"
+			". footer-terms footer-copy footer-button";
+
+		@media(max-width:@burgerbp) {
+			grid-template-columns: auto minmax(1fr, 250px) minmax(1fr, 250px);
+			grid-template-areas: "footer-logo footer-menu footer-menu"
+				". footer-terms footer-copy";
+		}
+
+		@media(max-width:@bp640) {
+			grid-template-columns: minmax(200px, 1fr);
+			grid-template-areas: "footer-logo"
+				"footer-menu"
+				"footer-terms"
+				"footer-copy";
+			grid-row-gap: 15px;
+		}
+	}
+
+	&__logo {
+		grid-area: footer-logo;
+		align-self: flex-end;
+
+		@media(max-width:@bp640) {
+			margin-bottom: 20px;
+			justify-self: center;
+		}
+	}
+
+	&__menu {
+		align-self: center;
+		grid-area: footer-menu;
+		justify-self: center;
+
+		@media(max-width:@bp640) {
+			margin-bottom: 20px;
+		}
+
+		.menu__list {
+			@media(max-width:@bp480) {
+				flex-direction: column;
+			}
+
+			&>li>a::after {
+				background-color: @darktxtcolor;
+			}
+		}
+	}
+
+	.terms {
+		margin-right: 1em;
+		grid-area: footer-terms;
+		justify-self: flex-end;
+
+		@media(max-width:@bp640) {
+			margin-right: 0;
+			justify-self: center;
+		}
+	}
+
+	.copyrights {
+		margin-left: 1em;
+		grid-area: footer-copy;
+		justify-self: flex-start;
+
+		@media(max-width:@bp640) {
+			margin-left: 0;
+			justify-self: center;
+		}
+	}
+
+	&__button {
+		grid-area: footer-button;
+		align-self: center;
+		justify-self: flex-end;
+
+		@media(max-width:@burgerbp) {
+			display: none;
+		}
+	}
+}
+
+.terms,
+.copyrights {
+	color: #C2C2C2;
+}
+
+.terms {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.arrow {
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	.adaptiv-value(padding, 32, 5);
+	background: @lighttxtcolor;
+	border: 1px solid @lighttxtcolor;
+	border-radius: 50%;
+	box-shadow: 0px 4px 16px rgba(37, 90, 182, 0.11);
+
+	img {
+		max-width: 100%;
+		height: auto;
+
+		@media (max-width:@bp1024) {
+			max-width: 85%;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+@import "_vars";
+
+
+// Адаптивное свойство
+@defaultType: 2;
+// =====================================================
+
+// Только если меньше контейнера 
+.adaptiv-value(@property, @startSize, @minSize, @type: @defaultType) when (@type=1) {
+	@addSize: @startSize - @minSize;
+
+	@{property}: @startSize * 1px;
+
+	@media (min-width:@cntbp) {
+		@{property}: calc(@minSize * 1px + @addSize * ((100vw - 320px) / (@fullContainerWidth - 320)));
+	}
+}
+
+// Только если больше контейнера
+.adaptiv-value(@property, @startSize, @minSize, @type: @defaultType) when (@type=2) {
+	@addSize: @startSize - @minSize;
+
+	@{property}: @startSize * 1px;
+
+	@media (max-width:@cntbp) {
+		@{property}: calc(@minSize * 1px + @addSize * ((100vw - 320px) / (@maxWidth - 320)));
+	}
+}
+
+// Всегда
+.adaptiv-value(@property, @startSize, @minSize, @type: @defaultType) {
+	@addSize: @startSize - @minSize;
+
+	@{property}: calc(@minSize * 1px + @addSize * ((100vw - 320px) / (@maxWidth - 320)));
+}
+
+// ====================================================================================== 
+
+
+// Адаптивный шрифт
+.adaptiv-font(@pcSize: 16, @mobSize: 12) {
+	@addSize: @pcSize - @mobSize;
+	@pxmobsize: @mobSize*1px;
+	@maxWidth: @maxWidthContainer - 320;
+	font-size: calc(@pxmobsize + @addSize * ((100vw - 320px) / @maxWidthContainer));
+}

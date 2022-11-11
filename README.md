@@ -89,44 +89,55 @@ phpMyAdmin -> http://localhost:8888/
 </br>
 </br>
 __Що, де і як можна змінювати!!!__
-1. php-html сторінки: resource/views бажано створити свою папку для своїх сторінок. Файл обов'язково з роширенням .blade.php  
+1. php сторінки: resource/views бажано створити свою папку для своїх сторінок. Файл обов'язково з роширенням .blade.php  
    нарпиклад media.blade.php і бажана верстка (загалом в таких файлах лежать main контенти):  
+   _Сторінки для не авторизованих, гостей_
    ```php
-   @extends('layout')
-   
-   @section('title', 'Ваш title сторінки')
-
-   @section('content')
-       //ваш main
-       <main>
-
-       </main>
-   @endsection
+   <x-guest-layout>
+      Ваш hmtl, що в лежить в тегі main
+   </x-guest-layout>
    ```
-   в layout шаблон, що буде на всіх сторінках, тут можна підключати header і footer  
+   _Для авторизованих_
+   ```php
+   <x-app-layout>
+      Ваш hmtl, що в лежить в тегі main
+   </x-app-layout>
+   ```
+   _!!!але якщо в php-сторікнах у вас будуть умови, що перевіряють чи авторизованих чи ні, то різниця у використанні практично не буде між x-app-layout і x-quest-layout!!!_
+
+   в app і quest шаблони (/resources/views/layouts/), тут можна підключати header, footer і нші php шаблони 
    ```php
    <!DOCTYPE html>
-    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+      <head>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>SafeUA - @yield('title')</title>  
-        //підключення через @section('title', 'Ваш title сторінки')
+         <title>{{ config('app.name', 'Laravel') }}</title>
+         //бажано підключити bootstrap 4, щб не посипалась верстка, на тих сторінках де написано на bootstrap
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+         
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-        <body>
-            @include('./tmp/header') // приклад підключення header
-            @yield('content') // підключення через  @section('content')
-            @include('./tmp/footer') // приклад підключення footer
-        </body>
-    </html>
+         <!-- Scripts -->
+         @vite(['resources/css/app.css', 'resources/js/app.js'])
+      </head>
+      <body class="font-sans antialiased">
+         <div class="min-h-screen bg-gray-100">
+               @include('tmp.header')
+
+               <!-- Page Content -->
+               <main>
+                  {{ $slot }} // якраз буде підставлятись ваш php
+               </main>
+         </div>
+         
+         //бажано підключити bootstrap 4, щб не посипалась верстка, на тих сторінках де написано на bootstrap
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+      </body>
+   </html>
    ```
    потім цим php-сторінками підключаємо власні під-посилання в route/wep.php:
    ```php
@@ -152,10 +163,3 @@ __Що, де і як можна змінювати!!!__
    ```html
    <img src="../img/ваша_папка/ваше_зображення.розширення" alt="">
    ```
-
-
-
-
-
-
-

@@ -5,13 +5,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Scripts -->
+	<!-- Scripts and Styles-->
 	@vite(['resources/css/app.css', 'resources/js/app.js'])
-	{{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-	@if(config('cssrouter.'.Route::currentRouteName()))
-	<link rel="stylesheet" href="{{ asset('css/' . config('cssrouter.'.Route::currentRouteName()) . '.css') }}">
-	@endif --}}
-	{{-- <link rel="shortcut icon" href="{{ asset('./favicon.ico') }}" type="image/x-icon"> --}}
+	{{-- Icon --}}
+	<link rel="shortcut icon" type="image/svg" href="{{ asset('img/logo-light.svg') }}" type="image/x-icon">
 	<title>Мапа</title>
 </head>
 
@@ -22,7 +19,7 @@
 		<!-- Для фона и бургера -->
 		<div class="header-bg"></div>
 		<!-- Контейнер -->
-		<div class="header__container">
+		<div class="header__container container">
 			<!-- Лого -->
 			<div class="header__logo logo">
 				<div class="logo__image"><img src="{{ asset('img/logo-light.svg') }}" alt="Logo"></div>
@@ -52,7 +49,8 @@
 				</select>
 			</div>
 			<!-- Кнопка входа -->
-			<div class="header__button"><a href="" class="button"><span>Увійти</span></a></div>
+			<div class="header__button"><a href="" class="button button_transparent"><span>Увійти</span></a></div>
+			<div class="header__button xl:hidden"><a href="" class="button"><span>Реєстрація</span></a></div>
 		</div>
 	</header>
 
@@ -60,7 +58,7 @@
 
 	<!-- Подвал -->
 	<footer class="footer">
-		<div class="footer__container">
+		<div class="footer__container container py-16 xl:py-14 lg:py-11 md:py-9 sm:py-7">
 			<!-- Логотип с названием сайта -->
 			<div class="footer__logo logo">
 				<div class="logo__image"><img src="{{ asset('img/logo.svg') }}" alt="Logo"></div>
@@ -86,7 +84,7 @@
 			<div class="copyrights">@Copyright</div>
 
 			<!-- Кнопка навигации -->
-			<div class="footer__button"><a href="" class="arrow"><img src="{{ asset('img/map/footer/arrow.svg') }}"
+			<div class="footer__button"><a href="" class="arrow p-8 xl:p-6 lg:p-5 md:p-3"><img src="{{ asset('img/layout/footer/arrow.svg') }}"
 						alt="Повернутися вгору"></a>
 			</div>
 		</div>
@@ -95,13 +93,6 @@
     <!--Подключаем Jquery-->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Кастомные селекты(выпадающие списки) -->
-    <script src="{{ asset('js/libs/custom-select.min.js') }}"></script>
-    <!-- Плагин для вспллывающих подсказок -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <!-- Главный скрипт -->
-	<script src="{{ asset('js/app.min.js') }}"></script>
 </body>
 
 </html>

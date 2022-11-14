@@ -1,0 +1,8 @@
+@import "_layout";
+
+/* Шапка и подвал */
+@import "vendor/header";
+@import "vendor/footer";
+
+/* Tailwindcss */
+@import "tailwind";

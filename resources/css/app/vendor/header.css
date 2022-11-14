@@ -1,6 +1,6 @@
 .header {
-	color: @headertxtcolor;
-	.adaptiv-font(16, 14);
+	color: $headertxtcolor;
+	font-size: 1em;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -12,14 +12,14 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background-color: @headercolor;
+		background-color: $headercolor;
 		z-index: -1;
 	}
 
 	&__container {
 		margin: 0 auto;
 		padding: 16px 15px 10px 15px;
-		min-height: @headerheight;
+		min-height: $headerheight;
 		display: flex;
 		align-items: center;
 	}
@@ -30,26 +30,36 @@
 		margin: 0 3em 0 1.5em;
 		flex: 1 1 auto;
 
-		@media(max-width:@bp480) {
+		@media(max-width:$bp480) {
 			margin: 0 2em 0 1em;
 		}
 	}
 
 	&__button {
-		margin-left: 1.4em;
+		margin-left: 0.75em;
+
+		&:only-child, &:not(:last-child){
+			margin-left: 1.4em;
+			@media(max-width:$bp1280){
+				margin-left: 0.5em;
+			}
+		}
 	}
 
-	// Menu Burger
-	@media(max-width:@burgerbp) {
+	/* Menu Burger */
+	@media(max-width:$burgerbp) {
 		.menu {
 			&__burger {
 				cursor: pointer;
 				display: block;
 				position: relative;
-				width: 36px;
-				height: 30px;
+				width: 34px;
+				height: 28px;
 				z-index: 10;
-
+				@media(max-width:$bp640){
+					width: 30px;
+					height: 26px;
+				}
 				&::before,
 				&::after,
 				span {
@@ -58,25 +68,37 @@
 					width: 100%;
 					height: 4px;
 					border-radius: 4px;
-					background-color: @headertxtcolor;
+					background-color: $headertxtcolor;
+					transition: all 0.1s ease-out 0s;
 				}
 
 				&::before,
 				&::after {
 					content: "";
 				}
-
 				&::before {
 					top: 0
 				}
-
 				&::after {
 					bottom: 0;
 				}
-
 				span {
 					top: 50%;
 					transform: translate(0, -50%);
+				}
+				&._active{
+					&::before {
+						top: 50%;
+						transform: translate(0) rotate(45deg);
+					}
+					&::after {
+						top: 50%;
+						transform: translate(0) rotate(-45deg);
+					}
+					span {
+						visibility: hidden;
+						opacity: 0;
+					}
 				}
 			}
 
@@ -86,11 +108,11 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				padding: calc(@headerheight + 40px) 30px 30px 30px;
+				padding: calc($headerheight + 40px) 30px 30px 30px;
 				transition: top 0.5s ease 0s;
 				z-index: -2;
 				overflow: auto;
-				background: @burgerbgc url('') center bottom / cover no-repeat;
+				background: $burgerbgc url('') center bottom / cover no-repeat;
 
 				&._active {
 					top: 0;
@@ -117,20 +139,17 @@
 	gap: 0.6em;
 
 	&__caption {
-		@media(max-width:@bp980) {
-			display: none;
-		}
-
 		display: flex;
 		flex-direction: column;
-
+		@media(max-width:$bp980) {
+			display: none;
+		}
 		.title {
 			font-size: 1.25em;
 			line-height: 1.35;
-			font-weight: @bold;
+			font-weight: $bold;
 			letter-spacing: 0.06em;
 		}
-
 		.subtitle {
 			letter-spacing: 0.01em;
 		}
@@ -149,7 +168,7 @@
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		.adaptiv-value(column-gap, 48, 20);
+		column-gap: 48px;
 		row-gap: 1em;
 
 		&>li {
@@ -164,13 +183,13 @@
 					display: block;
 					width: 100%;
 					height: 2px;
-					background-color: @headertxtcolor;
+					background-color: $headertxtcolor;
 					transform: scale(0);
 					transition: transform 0.3s ease 0s;
 				}
 
 				&:hover {
-					font-weight: @bold;
+					font-weight: $bold;
 
 					&::after {
 						transform: scale(1);
@@ -197,8 +216,8 @@
 		&-opener {
 			padding: 0.25em 0.5em;
 			border-radius: 0.2em;
-			background-color: @headercolor;
-			border: 2px solid @lighttxtcolor;
+			background-color: $headercolor;
+			border: 2px solid $lighttxtcolor;
 
 			&::after {
 				content: "";
@@ -209,22 +228,22 @@
 				transform: translateY(-50%);
 				border-style: solid;
 				border-width: 6px 3px 0 3px;
-				border-color: @lighttxtcolor transparent transparent transparent;
+				border-color: $lighttxtcolor transparent transparent transparent;
 			}
 
-			// &::before {
-			// 	content: "";
-			// 	display: inline-block;
-			// 	background: url(../img/header/language/ua-icon.png) 0 0/contain no-repeat;
-			// 	width: 20px;
-			// 	height: 20px;
-			// }
+			/* &::before {
+				content: "";
+				display: inline-block;
+				background: url(../img/header/language/ua-icon.png) 0 0/contain no-repeat;
+			 	width: 20px;
+			 	height: 20px;
+			 } */
 		}
 
 		&-panel {
 			border-radius: 0.5em;
 			background-color: #1a3ea8;
-			border: 1px solid @lighttxtcolor;
+			border: 1px solid $lighttxtcolor;
 		}
 
 		&-option {
@@ -246,30 +265,77 @@
 .button {
 	display: inline-block;
 	padding: calc(0.625em - 1px) calc(1.75em - 1px);
-	background-color: @headertxtcolor;
-	border: 1px solid @headertxtcolor;
+	background-color: $headertxtcolor;
+	border: 1px solid $headertxtcolor;
 	transition: all 0.25s ease-in-out 0s;
-
-	&:hover {
-		background-color: transparent;
-		box-shadow: 0 0 6px 0 #6b87da inset, 0 0 6px 2px #6b87da;
-
-		span {
-			color: @headertxtcolor;
-		}
-	}
-
+	filter: drop-shadow(0px 10px 36px rgba(0, 0, 0, 0.25));
+	border-radius: 3em;
 	&:active {
 		transform: translate(1px, 3px);
 	}
-
 	span {
-		font-weight: @bold;
-		color: @headercolor;
+		font-weight: $bold;
+		color: $headercolor;
+	}
+	&:hover {
+		background-color: transparent;
+		box-shadow: 0 0 6px 0 #6b87da inset, 0 0 6px 2px #6b87da;
+		span {
+			color: $headertxtcolor;
+		}
 	}
 
-	filter: drop-shadow(0px 10px 36px rgba(0, 0, 0, 0.25));
-	border-radius: 50px;
+	&_transparent{
+		padding: calc(0.5em - 1px) calc(1em - 1px);
+		background-color: transparent;
+		border-color: transparent;
+		span {
+			color: $lighttxtcolor;
+			&::after {
+				margin-top: 1px;
+				content: "";
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: $headertxtcolor;
+				transform: scale(0);
+				transition: transform 0.3s ease 0s;
+			}
+		}
+		&:hover{
+			box-shadow: none;
+			span::after{
+				transform: scale(1);
+			}
+		}
+		&:active{
+			transform: translate(0px, -2px);
+		}
+		
+		@media(max-width:$bp1280){ 
+			padding: calc(0.5em - 1px) calc(1.5em - 1px);
+			background-color: $headertxtcolor;
+			border: 1px solid $headertxtcolor;
+			filter: drop-shadow(0px 10px 36px rgba(0, 0, 0, 0.25));
+			&:active {
+				transform: translate(1px, 3px);
+			}
+			span {
+				color: $headercolor;
+				&:after{
+					display:none;
+				}
+			}
+			&:hover {
+				background-color: transparent;
+				box-shadow: 0 0 6px 0 #6b87da inset, 0 0 6px 2px #6b87da;
+				span {
+					color: $headertxtcolor;
+				}
+			}
+		}
+	}
 }
 
-// ==========================================================
+
+/* ========================================================== */

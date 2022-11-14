@@ -1,5 +1,2 @@
-/*@import "home/styles.css";*/
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "app/styles";
+@import "map/styles";

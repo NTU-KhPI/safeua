@@ -1,4 +1,4 @@
-@height0: 100%;
+$height0: 100%;
 
 *,
 *::before,
@@ -9,19 +9,7 @@
 	box-sizing: border-box;
 }
 
-input {
-	font-family: inherit;
-	font-size: inherit;
-	font-weight: inherit;
-	line-height: inherit;
-	outline: none;
-
-	&:focus {
-		outline: none;
-	}
-}
-
-textarea {
+input, textarea {
 	font-family: inherit;
 	font-size: inherit;
 	font-weight: inherit;
@@ -58,12 +46,12 @@ section {
 }
 
 html {
-	min-height: @height0;
+	min-height: $height0;
 }
 
 body {
 	line-height: 1;
-	min-height: @height0;
+	min-height: $height0;
 }
 
 a {

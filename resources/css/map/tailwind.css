@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{}
+
+@layer components {
+	.posts-page__post:not(:last-child){
+		@apply mb-[70px] xl:mb-[62px] lg:mb-14 md:mb-11 sm:mb-9; 
+	}
+	.posts-page .post{
+		@apply text-lg xl:text-[17px] lg:text-base md:text-[15px] sm:text-sm;
+		&__body{
+			@apply gap-y-11 xl:gap-y-9 lg:gap-y-7 md:gap-y-5 sm:gap-y-3;
+		}
+		&__block-text h3{
+			@apply text-[32px] xl:text-[28px] lg:text-[26px] md:text-2xl sm:text-lg; 
+		}
+		&__footer{
+			@apply mt-[50px] xl:mt-11 lg:mt-9 md:mt-7 sm:mt-5;
+		}
+	}
+}

@@ -8,12 +8,12 @@
 }
 
 .tippy-box[data-theme^="lighty"] {
-	.adaptiv-font(16, 12);
+	font-size: 1em;
 	position: relative;
 	border-radius: 7px;
 	white-space: normal;
-	background-color: @lighttxtcolor;
-	color: @darktxtcolor;
+	background-color: $lighttxtcolor;
+	color: $darktxtcolor;
 	transition-property: transform, visibility, opacity;
 
 	&[data-placement^="top"]>.tippy-arrow {
@@ -70,7 +70,7 @@
 .tippy-arrow {
 	width: 16px;
 	height: 16px;
-	color: @lighttxtcolor;
+	color: $lighttxtcolor;
 
 	&:before {
 		content: "";

@@ -1,17 +1,16 @@
 .posts-page {
-	background-color: @mainbgc;
+	background-color: $mainbgc;
 
 	&__container {
-		.adaptiv-value(padding-top, 70, 45);
-		.adaptiv-value(padding-bottom, 80, 45);
+		padding-top: 70px;
+		padding-bottom: 80px;
 		display: grid;
 		grid-template-columns: repeat(2, minmax(200px, 1fr));
 		grid-template-areas: "posts-search posts-sort"
 			"posts-content posts-content";
+		grid-row-gap: 80px;
 
-		.adaptiv-value(grid-row-gap, 80, 20);
-
-		@media(max-width:@bp760) {
+		@media(max-width:$bp760) {
 			grid-template-columns: auto;
 			grid-template-areas: "posts-search"
 				"posts-sort"
@@ -23,7 +22,7 @@
 		grid-area: posts-search;
 		align-self: center;
 
-		@media(max-width:@bp760) {
+		@media(max-width:$bp760) {
 			width: 100%;
 			justify-self: center;
 		}
@@ -41,7 +40,7 @@
 			input[type="text"] {
 				flex: 1 1 auto;
 				min-height: 2.3em;
-				color: @lighttxtcolor;
+				color: $lighttxtcolor;
 				line-height: 1.4;
 				letter-spacing: 0.1em;
 
@@ -52,7 +51,7 @@
 				}
 
 				&::placeholder {
-					color: @lighttxtcolor;
+					color: $lighttxtcolor;
 					opacity: 0.8;
 					font-size: 14px;
 				}
@@ -73,14 +72,14 @@
 		justify-self: flex-end;
 		align-self: center;
 
-		@media(max-width:@bp760) {
+		@media(max-width:$bp760) {
 			justify-self: center;
 		}
 
 		margin: 0px 10px;
 		width: 100%;
 		max-width: 300px;
-		color: @lighttxtcolor;
+		color: $lighttxtcolor;
 
 		.cs {
 			&-wrapper {
@@ -109,7 +108,7 @@
 
 				&::after {
 					content: "";
-					border: solid @lighttxtcolor;
+					border: solid $lighttxtcolor;
 					border-width: 0 3px 3px 0;
 					display: inline-block;
 					padding: 4px;
@@ -121,7 +120,7 @@
 			&-panel {
 				min-width: auto;
 				width: 90%;
-				background-color: @headercolor;
+				background-color: $headercolor;
 				border-radius: 0 0 0.7em 0.7em;
 			}
 
@@ -139,15 +138,18 @@
 
 	&__content {
 		grid-area: posts-content;
-		padding: 1em 0;
+		margin: 2em 0;
 
-		h2 {
+		@media(max-width: $bp980){
+			margin: 1.3em 0;
+		}
+		.content-title {
 			margin-bottom: 1em;
 			text-align: center;
-			font-weight: @bold;
-			.adaptiv-font(42, 22);
+			font-weight: $bold;
+			line-height: 1.33;
 			padding-bottom: 0.3em;
-			border-bottom: 0.1em solid @contentcolor;
+			border-bottom: 0.1em solid $contentcolor;
 			border-radius: 0px 0px 5px 5px;
 		}
 	}
@@ -158,7 +160,7 @@
 
 	&__post {
 		&:not(:last-child) {
-			.adaptiv-value(margin-bottom, 70, 40);
+			margin-bottom: 70px;
 		}
 	}
 
@@ -168,43 +170,35 @@
 		flex-direction: column;
 		padding: 1.5em 1em;
 		background-color: #cad3f390;
-		border: 3px @contentcolor;
+		border: 3px $contentcolor;
 		border-style: dotted;
+		font-size: 1.2em;
 
-		.adaptiv-font(18, 14);
-
-		&::before,
-		&::after {
+		&-decor {
 			position: absolute;
 			top: 0;
-			content: "";
 			z-index: 10;
-		}
 
-		&::before {
-			display: block;
-			left: 0;
-			transform: translate(-50%, -50%);
-			width: 100px;
-			height: 80px;
-			background: transparent url('@img/posts/post-decor-left.png') 0 0/contain no-repeat;
+			&_left {
+				left: 0;
+				transform: translate(-50%, -50%);
+				width: 100px;
+				height: 80px;
 
-			@media(max-width:@bp760) {
-				width: 70px;
-				height: 50px;
+				@media(max-width:$bp760) {
+					width: 70px;
+					height: 50px;
+				}
 			}
-		}
+			&_right {
+				width: 110px;
+				height: 110px;
+				transform: translate(-50%, 0%);
+				left: 50%;
 
-		&::after {
-			display: block;
-			width: 110px;
-			height: 110px;
-			transform: translate(-50%, 0%);
-			left: 50%;
-			background: transparent url('@img/posts/post-decor-right.png') 0 0/contain no-repeat;
-
-			@media(max-width:@bp980) {
-				display: none;
+				@media(max-width:$bp980) {
+					display: none;
+				}
 			}
 		}
 
@@ -212,23 +206,23 @@
 			grid-area: post-image;
 			max-width: 450px;
 
-			@media(max-width:@bp980) {
+			@media(max-width:$bp980) {
 				max-width: 400px;
 			}
 
-			@media(max-width:@bp760) {
+			@media(max-width:$bp760) {
 				max-width: 320px;
 			}
 
-			@media(max-width:@bp640) {
+			@media(max-width:$bp640) {
 				max-width: 260px;
 			}
 
-			@media(max-width:@bp560) {
+			@media(max-width:$bp560) {
 				justify-self: center;
 			}
 
-			@media(max-width:@bp480) {
+			@media(max-width:$bp480) {
 				display: none;
 			}
 
@@ -247,20 +241,20 @@
 					transform: scale(2.3);
 					transition: all 0.2s ease-out 0.2s;
 
-					@media(max-width:@fullContainerWidth) {
+					@media(max-width:$fullContainerWidth) {
 						transform: scale(2);
 					}
 
-					@media(max-width:@bp980) {
+					@media(max-width:$bp980) {
 						transform: scale(1.8);
 						transform-origin: left top;
 					}
 
-					@media(max-width:@bp760) {
+					@media(max-width:$bp760) {
 						transform: scale(1.5);
 					}
 
-					@media(max-width:@bp640) {
+					@media(max-width:$bp640) {
 						cursor: auto;
 						transform: none;
 					}
@@ -274,22 +268,21 @@
 			grid-template-columns: auto 1fr;
 			grid-template-areas: ". post-sender"
 				"post-image post-text";
-			.adaptiv-value(grid-column-gap, 45, 10);
-
-			@media(max-width:@bp980) {
+			grid-column-gap: 45px;
+			@media(max-width:$bp980) {
 				grid-template-columns: 60% 1fr;
 				grid-template-areas: "post-image post-sender"
 					"post-text post-text";
 				grid-row-gap: 2em;
 			}
 
-			@media(max-width:@bp560) {
+			@media(max-width:$bp560) {
 				grid-template-columns: auto;
 				grid-template-areas: "post-image""post-sender"
 					"post-text";
 			}
 
-			@media(max-width:@bp480) {
+			@media(max-width:$bp480) {
 				grid-template-areas: "post-sender"
 					"post-text";
 			}
@@ -302,26 +295,26 @@
 				align-items: center;
 				justify-content: flex-end;
 
-				@media(max-width:@bp560) {
+				@media(max-width:$bp560) {
 					margin-bottom: 0;
 					justify-content: flex-start;
 				}
 
 				gap: 10px;
-				border: solid @contentcolor;
+				border: solid $contentcolor;
 				border-width: 0px 3px 0px 0px;
 
-				@media(max-width:@bp980) {
+				@media(max-width:$bp980) {
 					align-self: flex-start;
 				}
 
-				@media(max-width:@bp760) {
+				@media(max-width:$bp760) {
 					padding: 5px;
 					border: 0;
 				}
 
 				&-photo {
-					border: 2px solid @contentcolor;
+					border: 2px solid $contentcolor;
 					display: block;
 					flex: 0 1 50px;
 
@@ -343,14 +336,14 @@
 					}
 
 					a:hover {
-						color: @contentcolor;
+						color: $contentcolor;
 						text-decoration: underline;
 					}
 				}
 
 				&-name {
 					font-size: 1.05em;
-					font-weight: @medium;
+					font-weight: $medium;
 				}
 
 				&-location {}
@@ -361,29 +354,29 @@
 			grid-area: post-text;
 
 			h3 {
-				font-weight: @medium;
+				font-weight: $medium;
 				max-width: 85%;
 				margin-bottom: 0.5em;
-				.adaptiv-font(32, 18);
+				font-size: 32px;
 				line-height: 1.3;
 
-				@media(max-width:@bp760) {
+				@media(max-width:$bp760) {
 					max-width: 100%;
 				}
 			}
 
-			>div {
+			& > div {
 				line-height: 1.2;
 			}
 		}
 
 		&__footer {
-			.adaptiv-value(margin-top, 50, 25);
+			margin-top: 50px;
 			display: flex;
 			align-items: flex-end;
 			justify-content: space-between;
 
-			@media(max-width:@bp560) {
+			@media(max-width:$bp560) {
 				flex-direction: column;
 				row-gap: 0.5em;
 			}
@@ -396,7 +389,7 @@
 			align-items: center;
 			gap: 3em;
 
-			@media(max-width:@bp560) {
+			@media(max-width:$bp560) {
 				width: 100%;
 				gap: 1.5em;
 				margin-left: 0;
@@ -407,7 +400,12 @@
 				flex: 0 0 32px;
 				width: 100%;
 				max-width: 32px;
-
+				@media(max-width:$bp980){
+					flex: 0 0 28px;
+				}
+				@media(max-width:$bp640){
+					flex: 0 0 24px;
+				}
 				object,
 				svg,
 				img {
@@ -445,7 +443,7 @@
 			text-align: right;
 
 			time {
-				font-weight: @bold;
+				font-weight: $bold;
 				color: #1344d4;
 			}
 		}
@@ -457,20 +455,20 @@
 		}
 
 		&__item {
-			// color: @lighttxtcolor;
-			// padding: 1em;
-			// border-radius: 10px;
-			// background-color: #1344d4;
-			// &._current {
-			// 	&::after {
-			// 		content: "";
-			// 		border: solid @lighttxtcolor;
-			// 		border-width: 0 3px 3px 0;
-			// 		display: inline-block;
-			// 		padding: 3px;
-			// 		transform: rotate(45deg);
-			// 	}
-			// }
+			/* color: $lighttxtcolor;
+			padding: 1em;
+			border-radius: 10px;
+			background-color: #1344d4;
+			&._current {
+				&::after {
+					content: "";
+					border: solid $lighttxtcolor;
+					border-width: 0 3px 3px 0;
+					display: inline-block;
+					padding: 3px;
+					transform: rotate(45deg);
+				}
+			} */
 		}
 	}
 
@@ -482,15 +480,15 @@
 		a {
 			display: inline-block;
 			padding: 1em 2em;
-			color: @contentcolor;
-			font-weight: @bold;
+			color: $contentcolor;
+			font-weight: $bold;
 			border-radius: 1.2em;
 			background-color: transparent;
 			border: 2px solid #1344d4;
 			transition: all 0.3s ease-in 0s;
 
 			&:hover {
-				color: @lighttxtcolor;
+				color: $lighttxtcolor;
 				background-color: #1344d4;
 			}
 

@@ -1,0 +1,16 @@
+/* Переменные */
+@import "../app/_vars";
+
+/*=============================================== */
+
+/* ========================================== */
+
+/* .content-title {} */
+
+/* Части страницы */
+@import "vendor/custom-select";
+@import "vendor/map-page";
+@import "vendor/posts-page";
+
+/* Tailwindcss */
+@import "tailwind";

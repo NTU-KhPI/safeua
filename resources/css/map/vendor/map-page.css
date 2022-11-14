@@ -2,16 +2,16 @@
 
 
 .map-page {
-	padding-top: @headerheight;
-	background-color: @mainbgc;
+	padding-top: $headerheight;
+	background-color: $mainbgc;
 
 	&__container {
-		min-height: calc(100vh - @headerheight);
+		min-height: calc(100vh - $headerheight);
 		min-height: inherit;
-		.adaptiv-value(padding-top, 70, 45);
-		.adaptiv-value(padding-bottom, 80, 45);
+		padding-top: 70px;
+		padding-bottom: 80px;
 
-		@media(max-width:@bp760) {
+		@media(max-width:$bp760) {
 			min-height: auto;
 		}
 	}
@@ -21,17 +21,15 @@
 	display: flex;
 	justify-content: center;
 	filter: drop-shadow(0px 4px 54px rgba(0, 0, 0, 0.11));
-
-	svg,
-	object[type="image/svg+xml"] {
+	
+	svg, object[type="image/svg+xml"] {
 		width: 100%;
-		max-width: @mapwidth;
+		max-width: $mapwidth;
 	}
 }
 
 .tooltip-regions {
 	display: none;
-
 	&__items {}
 }
 
@@ -41,18 +39,18 @@
 	padding: 15px 10px;
 	background: #F1F4F8;
 	margin: 0 auto;
-	max-width: @tipwidth;
+	max-width: $tipwidth;
 
-	@media (max-width: @bp1366) {
-		max-width: calc(@tipwidth - 50px);
+	@media (max-width: $bp1366) {
+		max-width: calc($tipwidth - 50px);
 	}
 
-	>*:not(:last-child) {
+	& > *:not(:last-child) {
 		margin-bottom: 1em;
 	}
 
 	&__content {
-		>*:not(:last-child) {
+	 &	>*:not(:last-child) {
 			margin-bottom: 1.2em;
 		}
 	}
@@ -60,7 +58,6 @@
 	&__image {
 		display: flex;
 		justify-content: center;
-
 		img {
 			display: block;
 			max-width: 100%;
@@ -71,7 +68,7 @@
 	&__name {
 		text-align: center;
 		font-size: 1.1em;
-		font-weight: @bold;
+		font-weight: $bold;
 	}
 
 	&__desc {}
@@ -122,7 +119,7 @@
 	&__more {
 		flex: 1 1 auto;
 		font-size: 0.9em;
-		color: @headercolor;
+		color: $headercolor;
 		text-decoration: underline;
 		text-align: right;
 	}

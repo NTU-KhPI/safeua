@@ -1,6 +1,5 @@
 .posts-page {
 	background-color: $mainbgc;
-
 	&__container {
 		padding-top: 70px;
 		padding-bottom: 80px;
@@ -17,7 +16,6 @@
 				"posts-content";
 		}
 	}
-
 	&__search {
 		grid-area: posts-search;
 		align-self: center;
@@ -26,13 +24,11 @@
 			width: 100%;
 			justify-self: center;
 		}
-
 		max-width: 300px;
 		margin: 0px 10px;
 		padding: 0.45em 1em;
 		background-color: #1344d4;
 		border-radius: 10px;
-
 		form {
 			display: flex;
 			align-items: center;
@@ -43,43 +39,37 @@
 				color: $lighttxtcolor;
 				line-height: 1.4;
 				letter-spacing: 0.1em;
-
 				&,
 				&:focus,
 				&:active {
 					background-color: transparent;
 				}
-
 				&::placeholder {
 					color: $lighttxtcolor;
 					opacity: 0.8;
 					font-size: 14px;
 				}
 			}
-
 			button {
 				flex: 0 1 25px;
-
 				img {
 					max-width: 100%;
 				}
 			}
 		}
 	}
-
 	&__sort {
 		grid-area: posts-sort;
 		justify-self: flex-end;
 		align-self: center;
-
-		@media(max-width:$bp760) {
-			justify-self: center;
-		}
-
 		margin: 0px 10px;
 		width: 100%;
 		max-width: 300px;
 		color: $lighttxtcolor;
+
+		@media(max-width:$bp760) {
+			justify-self: center;
+		}
 
 		.cs {
 			&-wrapper {
@@ -93,7 +83,6 @@
 					}
 				}
 			}
-
 			&-opener {
 				display: flex;
 				align-items: center;
@@ -116,14 +105,12 @@
 					transition: transform 0.2s ease-in-out 0s;
 				}
 			}
-
 			&-panel {
 				min-width: auto;
 				width: 90%;
 				background-color: $headercolor;
 				border-radius: 0 0 0.7em 0.7em;
 			}
-
 			&-option {
 				padding: 0.8em 0.6em;
 				letter-spacing: 0.05em;
@@ -135,7 +122,6 @@
 			}
 		}
 	}
-
 	&__content {
 		grid-area: posts-content;
 		margin: 2em 0;
@@ -162,6 +148,9 @@
 		&:not(:last-child) {
 			margin-bottom: 70px;
 		}
+	}
+	.exception{
+
 	}
 
 	.post {
@@ -229,13 +218,12 @@
 			img {
 				position: relative;
 				z-index: 20;
-				cursor: zoom-in;
+				/* cursor: zoom-in; */
 				display: block;
 				max-width: 100%;
 				height: auto;
 				transition: all 0.2s ease-out 0.1s;
-
-				&:hover {
+				/* &:hover {
 					transform-origin: center center;
 					width: auto;
 					transform: scale(2.3);
@@ -258,7 +246,7 @@
 						cursor: auto;
 						transform: none;
 					}
-				}
+				} */
 			}
 		}
 
@@ -474,10 +462,9 @@
 
 	&__more {
 		margin-top: 2em;
-		display: flex;
-		justify-content: center;
-
-		a {
+        display: flex;
+        justify-content: center;    
+		button {
 			display: inline-block;
 			padding: 1em 2em;
 			color: $contentcolor;

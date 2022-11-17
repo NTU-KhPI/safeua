@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\MapController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/map', function () {
-    return view('map');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/map', [MapController::class, 'index'])->name('map');
 
 require __DIR__.'/auth.php';

@@ -1,13 +1,5 @@
 import tippy, { followCursor } from 'tippy.js';
 
-// Всплывающие подсказки по регионам
-
-/* var svgobject = document.getElementById('svgmap');
-if (svgobject) {
-	var svgdom = svgobject.contentDocument;
-}
-const land = ($(svgdom).find('.land')); */
-
 
 export default function InitTooltips(tooltip) {
 	let tooltips = [];
@@ -49,17 +41,39 @@ export default function InitTooltips(tooltip) {
 	}
 }
 
-export function LimDesc(maxLength) {
-	let desc = $('.region__desc');
-	$(desc).each(function (index, element) {
-		const descText = $(this).text();
-		if (descText.length > maxLength) {
-			for (let i = maxLength; i < descText.length; i++) {
-				if (descText[i] == ' ') {
-					$(this).text(descText.substring(0, i) + '...');
-					break;
-				}
+export function InitDropDownMenu(button, content) {
+	if (button) {
+		$(button).each(function (index, element) {
+			tippy(element, {
+				theme: 'lighty',
+				arrow: true,
+				allowHTML: true,
+				duration: 300,
+				interactiveBorder: 0,
+				content: $(content).html(),
+				zIndex: 50,
+				animation: 'fade',
+				trigger: 'click',
+				interactive: true,
+				appendTo: 'parent',
+			});
+			// На телефонах скрывается
+			// checkResolution(tooltips[index]);
+		});
+	}
+
+	// Проверка медиазапроса и скрытие tooltip
+	function checkResolution(tooltips) {
+		const mediaQuery = window.matchMedia('(max-width: 768px)')
+		function handleTabletChange(e) {
+			if (e.matches) {
+				tooltips.disable();
+			}
+			else {
+				tooltips.enable();
 			}
 		}
-	});
+		mediaQuery.addListener(handleTabletChange);
+		handleTabletChange(mediaQuery);
+	}
 }

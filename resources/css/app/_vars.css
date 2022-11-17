@@ -8,16 +8,13 @@ $extrabold: 800;
 $black: 900;
 
 
-/* Ширина вьюпорта и контейнера */
-$maxWidth: 1920;
+/* Ширина контейнера */
 $maxWidthContainer: 1600;
 
 /* Отступы безопасности */
 $cntpd: 15;
 
 $fullContainerWidth: $maxWidthContainer + $cntpd + $cntpd;
-
-
 
 /* Брейкпоинты */
 $cntbp: $fullContainerWidth*1px;

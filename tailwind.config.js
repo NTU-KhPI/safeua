@@ -24,12 +24,7 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', 'sans-serif'],
             },
-            backgroundImage: {
-                'postdecorleft': "url('img/map/posts/post-decor-left.png')",
-                'postdecorright': "url('img/map/posts/post-decor-right.png')",
-            },
         },
     },
-
     plugins: [require('@tailwindcss/forms')],
 };

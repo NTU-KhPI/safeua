@@ -339,3 +339,65 @@
 
 
 /* ========================================================== */
+
+.auth-user {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+	margin-left: 1em;
+	&:after{
+		display: block;
+		margin-left: 1.2ch;
+		content: "";
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 6px 5px 0 5px;
+		border-color: $lighttxtcolor transparent transparent transparent;
+	}
+	&-data {
+		display:flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap:0.7em;
+	}
+	&-avatar {
+		border: 2px solid $lighttxtcolor;
+		flex: 0 0 42px;
+		max-width: 42px;
+		display: flex;
+		img{
+			max-width: 100%;
+			display: block;
+			height: auto;
+		}
+	}
+	&-name {
+		overflow: hidden;
+		font-size: 1.2em;
+		font-weight: $medium;
+		transition: all 0.3s ease 0s;
+		.auth-user:hover &{
+			text-decoration: underline;
+		}
+	}
+	&-actions {
+		background-color: $footercolor;
+		padding: 10px 0px;
+	}
+	&-action {
+		display:block;
+		font-weight: $medium;
+		padding: .5em 1em;
+		letter-spacing: 0.01em;
+		font-size: 1.1em;
+		transition: all 0.3s ease-out 0s;
+		&:hover{
+			background-color: $lighttxtcolor;
+		}
+		a {
+			display: block;
+			width: 100%
+		}
+	}
+}

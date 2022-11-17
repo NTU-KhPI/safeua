@@ -1,4 +1,4 @@
-**Скопійовано у Глєбова Є. КН-1020б**
+*Скопійовано у Глєбова Є. КН-1020б*
 
 __Кроки встанолення:__
 1. Створюємо будь-де папку, в ній відкриваємо PowerShell (Shift+RMB і там буде "Відкрити вікно PowerShell тут".
@@ -44,7 +44,7 @@ __Кроки встанолення:__
    git commit -m "тут пишете дію або зміну, яку ви зробили бажано на англійському і англійскьми літерами"
    ```
    ```
-   git push --set-upstream origin your-branch
+   git push origin your-branch
    ```
    </br>
    </br>
@@ -52,7 +52,7 @@ __Кроки встанолення:__
 3. В папках safeua і .docker копіювати файли .env.example в .env
 4. В папці .docker відкриваємо PowerShell(краще відкрити в інтегрованому терміналі вашої IDE) і вводимо команду:
    ```
-   docker compose up 
+   docker-compose up 
    ```
    _Якщо у вас відкривається вікно, що наведнео нижче, нажимайте Share it_  
    ![This is an image](https://github.com/eugene-hliebov/readME_files/blob/main/Docker%20Desktop%20Filesharing.png)
@@ -70,20 +70,26 @@ __Кроки встанолення:__
    ```
 7. В кореневій папці safeua:
    ```
-   npm install
+   npm i
    ```
    ```
-   npm run build
+   npm run dev // При розробці (що вам і потрібно) 
    ```
    ```
-   npm run dev
+   npm run build // Продакшн
    ```
-8. Міграція таблиц, знову відкриваємо термінал в контейнері app і пишемо:  
+8. Міграція таблиць, знову відкриваємо термінал в контейнері app і пишемо:  
    ```
    php artisan migrate
    ```
-   
-   
+   Скасування однієї міграції:
+   ```
+   php artisan migrate:rollback
+   ```
+   Скасування всіх міграцій:
+   ```
+   php artisan migrate:reset
+   ```
    
 Веб-застосунок -> http://localhost/  
 phpMyAdmin -> http://localhost:8888/
@@ -117,9 +123,6 @@ __Що, де і як можна змінювати!!!__
          <meta name="csrf-token" content="{{ csrf_token() }}">
 
          <title>{{ config('app.name', 'Laravel') }}</title>
-         //бажано підключити bootstrap 4, щб не посипалась верстка, на тих сторінках де написано на bootstrap
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-         
 
          <!-- Scripts -->
          @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -133,11 +136,7 @@ __Що, де і як можна змінювати!!!__
                   {{ $slot }} // якраз буде підставлятись ваш php
                </main>
          </div>
-         
-         //бажано підключити bootstrap 4, щб не посипалась верстка, на тих сторінках де написано на bootstrap
-         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
       </body>
    </html>
    ```
@@ -158,12 +157,10 @@ __Що, де і як можна змінювати!!!__
 4. Js: в resource/js бажано створити свою папку і в файл app.js в resource/css робити імпортування ваших js. Наприклад:
    ```js
    import './ваша_папка/ваш_js';
-   // js файл в імпорті без .js
    ```
-5. _P.S. можливо я неправильно зрозумів, куди кидати img, але мій варіант все ж таки також працює_  
-   Img: в public/img бажано створити свою папку і туди можливо закидувати ваші img. Приклад підключення зображень:
+5. Зображення кидати: в "public/img/", створити свою папку і туди закидувати ваші img. Приклад підключення зображень до шаблону:
    ```html
-   <img src="../img/ваша_папка/ваше_зображення.розширення" alt="">
+   <img src="{{ asset('img/map/map.png') }}" alt="">
    ```
 </br>
 </br>

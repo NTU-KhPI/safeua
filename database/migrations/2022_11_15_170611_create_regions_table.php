@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('regions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 50);
+            $table->string('name', 50)->unique();
             $table->string('title');
             $table->text('desc')->nullable();
         });

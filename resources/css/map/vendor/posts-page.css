@@ -4,7 +4,7 @@
 		padding-top: 70px;
 		padding-bottom: 80px;
 		display: grid;
-		grid-template-columns: repeat(2, minmax(200px, 1fr));
+		grid-template-columns: repeat(2, minmax(250px, 1fr));
 		grid-template-areas: "posts-search posts-sort"
 			"posts-content posts-content";
 		grid-row-gap: 80px;
@@ -19,32 +19,39 @@
 	&__search {
 		grid-area: posts-search;
 		align-self: center;
-
-		@media(max-width:$bp760) {
-			width: 100%;
-			justify-self: center;
-		}
-		max-width: 300px;
+		max-width: 350px;
 		margin: 0px 10px;
 		padding: 0.45em 1em;
 		background-color: #1344d4;
 		border-radius: 10px;
+        @media(max-width:$bp980) {
+            max-width: 280px;
+        }
+        @media(max-width:$bp760) {
+			width: 100%;
+			justify-self: center;
+		}
 		form {
 			display: flex;
 			align-items: center;
 
 			input[type="text"] {
+
 				flex: 1 1 auto;
 				min-height: 2.3em;
 				color: $lighttxtcolor;
 				line-height: 1.4;
 				letter-spacing: 0.1em;
+                background-color: transparent;
 				&,
 				&:focus,
 				&:active {
-					background-color: transparent;
+                    border-image-width: 0;
+                    outline: none;
+                    border: none;
 				}
 				&::placeholder {
+                    outline:none;
 					color: $lighttxtcolor;
 					opacity: 0.8;
 					font-size: 14px;
@@ -64,18 +71,20 @@
 		align-self: center;
 		margin: 0px 10px;
 		width: 100%;
-		max-width: 300px;
+		max-width: 350px;
 		color: $lighttxtcolor;
-
+        @media(max-width:$bp980) {
+            max-width: 280px;
+        }
 		@media(max-width:$bp760) {
 			justify-self: center;
 		}
-
 		.cs {
 			&-wrapper {
 				&._open {
 					& .cs-panel {
 						padding: 0.5em 0;
+
 					}
 
 					& .cs-opener::after {
@@ -110,6 +119,7 @@
 				width: 90%;
 				background-color: $headercolor;
 				border-radius: 0 0 0.7em 0.7em;
+                transition: all 0.3s ease-in 0s, opacity 0.25s ease 0s;
 			}
 			&-option {
 				padding: 0.8em 0.6em;
@@ -463,7 +473,7 @@
 	&__more {
 		margin-top: 2em;
         display: flex;
-        justify-content: center;    
+        justify-content: center;
 		button {
 			display: inline-block;
 			padding: 1em 2em;

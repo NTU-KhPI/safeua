@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Region;
 use App\Models\Post;
+use App\Filters\PostFilter;
 
 class MapController extends Controller
 {

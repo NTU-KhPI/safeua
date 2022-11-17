@@ -1,4 +1,3 @@
-@csrf
 @forelse ($posts as $post)
 <div class="posts-page__post post post-{{$post->id}}">
     <div class="post-decor post-decor_left"

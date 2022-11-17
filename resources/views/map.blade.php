@@ -28,10 +28,10 @@
             <!-- Сортировка -->
             <div class="posts-page__sort sort">
                 <select name="" id="" class="sort__items">
-                    <option value="" class="sort__item" selected>За новизною</option>
-                    <option value="" class="sort__item">За розділами історій</option>
-                    <option value="" class="sort__item">За фото</option>
-                    <option value="" class="sort__item">Волонтерство</option>
+                    <option value="" class="sort__item" selected>Найновіші</option>
+                    <option value="" class="sort__item">Популярні</option>
+                    <option value="" class="sort__item">За регіонами</option>
+                    <option value="" class="sort__item">За кількістю донатів</option>
                 </select>
             </div>
 

@@ -12,7 +12,7 @@
     <!-- Scripts and Styles-->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- Icon --}}
-    <link rel="shortcut icon" type="image/svg" href="{{ asset('img/logo-light.svg') }}" type="image/x-icon">
+    <link rel="icon" type="image/svg" href="{{ asset('img/logo.ico') }}" type="image/x-icon">
     <title>@yield('title')</title>
 </head>
 
@@ -57,13 +57,14 @@
             @auth
             <button type="button" class="auth-user" id="auth-user-button">
                 <div class="auth-user-data">
-                    <div class="auth-user-avatar"><img src="{{ asset('img/user-avatar.png') }}" alt="Me"></div>
+                    <div class="auth-user-avatar"><img src="{{ asset('img/users/'.Auth::user()->avatar) }}" alt="Me">
+                    </div>
                     <div class="auth-user-name">
                         {{ Auth::user()->name }}
                     </div>
                     <div class="auth-user-actions__wrapper hidden">
                         <ul class="auth-user-actions">
-                            <li class="auth-user-action"><a href="">Налаштування</a></li>
+                            <li class="auth-user-action"><a href="{{ route('dashboard') }}">Налаштування</a></li>
                             <li class="auth-user-action">
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf

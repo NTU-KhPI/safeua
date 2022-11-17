@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->longText('text_content')->nullable();
+            $table->longText('body')->nullable();
             $table->string('preview')->nullable();
-            $table->foreignId('sender_id')->constrained('users');
-            $table->foreignId('region_id')->constrained('regions');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('region_id')->constrained()->onDelete('cascade');
             $table->unsignedBigInteger('views')->nullable();
             $table->unsignedBigInteger('likes')->nullable();
             $table->unsignedBigInteger('shares')->nullable();

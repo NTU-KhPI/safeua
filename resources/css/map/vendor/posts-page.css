@@ -268,12 +268,14 @@
 				"post-image post-text";
 			grid-column-gap: 45px;
 			@media(max-width:$bp980) {
-				grid-template-columns: 60% 1fr;
+				grid-template-columns: 55% 1fr;
 				grid-template-areas: "post-image post-sender"
 					"post-text post-text";
 				grid-row-gap: 2em;
 			}
-
+            @media(max-width:$bp840) {
+				grid-template-columns: 50% 1fr;
+            }
 			@media(max-width:$bp560) {
 				grid-template-columns: auto;
 				grid-template-areas: "post-image""post-sender"
@@ -314,7 +316,7 @@
 				&-photo {
 					border: 2px solid $contentcolor;
 					display: block;
-					flex: 0 1 50px;
+					flex: 0 1 54px;
 
 					img {
 						max-width: 100%;
@@ -326,7 +328,8 @@
 				&-data {
 					display: flex;
 					flex-direction: column;
-					gap: 0.4em;
+                    justify-content: center;
+					gap: 0.35em;
 
 					a {
 						letter-spacing: 0.05em;
@@ -364,11 +367,12 @@
 			}
 
 			& > div {
-				line-height: 1.2;
+				line-height: 1.33;
 			}
 		}
 
 		&__footer {
+            margin-left: 3%;
 			margin-top: 50px;
 			display: flex;
 			align-items: flex-end;
@@ -381,8 +385,8 @@
 		}
 
 		&__actions {
-			margin-left: 5%;
-			flex: 1 1 auto;
+            flex: 0 1 50%;
+            max-width: 420px;
 			display: flex;
 			align-items: center;
 			gap: 3em;
@@ -393,46 +397,83 @@
 				margin-left: 0;
 			}
 
-			a {
-				display: block;
-				flex: 0 0 32px;
-				width: 100%;
-				max-width: 32px;
-				@media(max-width:$bp980){
-					flex: 0 0 28px;
-				}
-				@media(max-width:$bp640){
-					flex: 0 0 24px;
-				}
+			.action {
+				display: flex;
+                align-items: center;
+                gap: 0.3em;
+                width: 100%;
+				&:hover .action__value {
+                    font-weight: $bold;
+                }
 				object,
 				svg,
 				img {
 					display: block;
 					height: auto;
 					max-width: 100%;
+                    flex: 0 0 32px;
+                    max-width: 32px;
+                    @media(max-width:$bp980){
+                        flex: 0 0 28px;
+                        max-width: 28px;
+                    }
+                    @media(max-width:$bp640){
+                        flex: 0 0 24px;
+                        max-width: 24px;
+                    }
+                    @media(max-width:$bp480){
+                        flex: 0 0 22px;
+                        max-width: 22px;
+                    }
 				}
-
-				&:hover {}
 
 				& svg path {
 					transition: all 0.3s ease-in;
 				}
 
-				&.like:hover path {
-					stroke: red;
-					fill: red;
-					filter: drop-shadow(1px 2px 1px rgb(0 0 0 / 0.4));
-				}
-
-				&.donate:hover path {
-					fill: rgb(165, 165, 42);
-				}
-
-				&.share:hover path {
-					stroke: blue;
-					fill: blue;
-					filter: drop-shadow(2px 3px 1px rgb(0 0 0 / 0.4));
-				}
+				&.views {
+                    &:hover{
+                        font-weight:$medium !important;
+                    }
+                    path {
+                        stroke: blue;
+                        fill: blue;
+                        filter: drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4));
+                    }
+                    span{
+                        color: blue;
+                    }
+                }
+				&.likes:hover {
+                    path {
+                        stroke: red;
+                        fill: red;
+                        filter: drop-shadow(1px 2px 1px rgb(0 0 0 / 0.4));
+                    }
+                    span{
+                        color: red;
+                    }
+                }
+				&.shares:hover {
+                    path {
+                        stroke: blue;
+                        fill: blue;
+                        filter: drop-shadow(2px 3px 1px rgb(0 0 0 / 0.4));
+                    }
+                    span{
+                        color: blue;
+                    }
+                }
+				&.donate:hover {
+                    path {
+					    fill: rgb(165, 165, 42);
+				    }
+                }
+                &__value {
+                    letter-spacing: 0.03em;
+                    font-weight: $medium;
+                    transition: all 0.3s ease-in 0s;
+                }
 			}
 		}
 
@@ -497,7 +538,6 @@
 
 	.block-text {
 		&__title {}
-
-		&__desc {}
+		&__content {}
 	}
 }

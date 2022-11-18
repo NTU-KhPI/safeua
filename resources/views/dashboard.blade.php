@@ -14,4 +14,9 @@
             </div>
         </div>
     </div>
+
+    @foreach($users as $user)
+        <p>{{ $user->name . ' - ' . $user->email . ' - ' . $user->created_at}}</p>
+    @endforeach
+
 </x-app-layout>

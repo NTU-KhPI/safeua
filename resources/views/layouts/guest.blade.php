@@ -12,9 +12,12 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        @include('tmp.header')
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
+        <div id="main-wrapper" class="d-flex flex-column min-h-screen">
+            @include('tmp.header')
+            <div class="font-sans text-gray-900 antialiased flex-grow-1">
+                {{ $slot }}
+            </div>
+            @include('tmp.footer')
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>

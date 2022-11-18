@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header flex-shrink-0">
     <div class="container">
         <div class="header__rowLogo">
             <a href="/"><img src="../img/Logo.svg" alt="logo" class="header__logo"></a>
@@ -43,7 +43,7 @@
                             </form>
                         </div>
                     </div>
-                    
+
                 @else
                     <a href="{{ route('login') }}" class="log_in">Log in</a>
 

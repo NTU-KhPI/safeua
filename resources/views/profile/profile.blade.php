@@ -1,14 +1,13 @@
-@extends('profile\layout')
-
-@section('content')
-    <section style="background-color: #eee;">
+<x-app-layout>
+    <section>
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                                 class="rounded-circle img-fluid" style="width: 150px;">
+{{--                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"--}}
+{{--                                 class="rounded-circle img-fluid" style="width: 150px;">--}}
+                            <div style="width: 100px; height: 100px; border-radius: 50px; background: rebeccapurple; margin: 0 auto"></div>
                             <h5 class="my-3">Taras Shevchenko</h5>
                             <p class="text-muted mb-1">Simple ukrainian boy</p>
                             <p class="text-muted mb-4">Kharkiv district</p>
@@ -47,7 +46,7 @@
                 <div class="col-lg-8">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row py-3">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Username</p>
                                 </div>
@@ -56,7 +55,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
+                            <div class="row py-3">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Full Name</p>
                                 </div>
@@ -65,7 +64,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
+                            <div class="row py-3">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Email</p>
                                 </div>
@@ -74,7 +73,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
+                            <div class="row py-3">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Phone</p>
                                 </div>
@@ -83,7 +82,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
+                            <div class="row py-3">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Region</p>
                                 </div>
@@ -124,4 +123,4 @@
             </div>
         </div>
     </section>
-@endsection
+</x-app-layout>

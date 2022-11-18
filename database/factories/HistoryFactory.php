@@ -8,9 +8,9 @@ use \App\Models\User;
 use \App\Models\Region;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\History>
  */
-class PostFactory extends Factory
+class HistoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -21,6 +21,7 @@ class PostFactory extends Factory
     {
         return [
            'title' => $this->faker->sentence(),
+           'tag' => $this->faker->word(),
            'body' => $this->faker->text(400),
            'preview' => $this->faker->imageUrl(300, 200),
            'user_id' => User::get()->random()->id,

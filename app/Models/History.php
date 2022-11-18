@@ -10,7 +10,7 @@ use App\Models\Region;
 use App\Models\User;
 use App\Filters\QueryFilter;
 
-class Post extends Model
+class History extends Model
 {
     use HasFactory;
 

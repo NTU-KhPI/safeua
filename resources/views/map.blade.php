@@ -41,13 +41,13 @@
                     історії
                 </h2>
                 <div class="posts-page__posts">
-                    @include('map.postdata')
+                    @include('map.historydata')
                 </div>
                 <!-- Data Loader -->
-                <div class="mt-4 ajax-load hidden mx-auto w-10 h-10 lg:w-8 lg:h-8 md:w-6 md:h-6">
+                <div class="mt-8 ajax-load hidden mx-auto w-10 h-10 lg:w-8 lg:h-8 lg:mt-6 md:w-6 md:h-6 md:mt-4">
                     <img src="{{ asset('img/loader.gif') }}" alt="Loading...">
                 </div>
-                @if (($posts->total() > 0) and ($posts->total() > $posts->count()))
+                @if (($histories->total() > 0) and ($histories->total() > $histories->count()))
                 <div class="posts-page__more"><button type="button" class="load-more">Більше постів</button></div>
                 @endif
             </div>
@@ -55,45 +55,45 @@
 
         <script type="text/javascript">
             var pageNum = 1;
-            var ENDPOINT = "{{ url("/") }}"
-            $('.load-more').click(function() {
-                    pageNum++;
-                    loadMorePosts(pageNum);
-            });
-
-            function loadMorePosts(pageNum){
-                $.ajax(
-                {
-                    url:ENDPOINT +'/map?page=' + pageNum,
-                    type: "GET",
-                    beforeSend: function()
-                    {
-                        $('.load-more').hide();
-                        $('.ajax-load').show();
-                    }
-                })
-                .done(function(data)
-                {
-                    if(data.html == " "){
-                        $('.ajax-load').html("No more records found");
-                        return;
-                    }
-                    $('.ajax-load').hide();
-                    $('.load-more').show();
-                    $(".posts-page__posts").append(data.html);
-                })
-                .fail(function(jqXHR, ajaxOptions, thrownError)
-                {
-                    alert('server not responding...');
+                var ENDPOINT = "{{ route("map") }}"
+                $('.load-more').click(function() {
+                        pageNum++;
+                        loadMorePosts(pageNum);
                 });
-            }
+                function loadMorePosts(pageNum){
+                    $.ajax(
+                    {
+                        url:ENDPOINT +'?page=' + pageNum,
+                        type: "GET",
+                        beforeSend: function()
+                        {
+                            $('.load-more').hide();
+                            $('.ajax-load').show();
+                        },
+                    })
+                    .done(function(data)
+                    {
+                        if(!(data.html)){
+                            $('.ajax-load').html("No more records found");
+                            $('.ajax-load').hide();
+                            return;
+                        }
+                        $('.ajax-load').hide();
+                        $('.load-more').show();
+                        $(".posts-page__posts").append(data.html);
+                    })
+                    .fail(function(jqXHR, ajaxOptions, thrownError)
+                    {
+                        alert('Помилка завантаження постів!');
+                    });
+                }
         </script>
     </section>
 </main>
+
 <!-- Модальные элементы -->
 <!-- Всплывающие подсказки по каждому региону -->
 <div class="tooltip-regions">
-
     <div class="tooltip-regions__items">
         @isset($regions)
         @foreach ($regions as $region)
@@ -102,7 +102,7 @@
                 <h3 class="region__title">{{ $region->title }}</h3>
                 <div class="region__desc">{{ Str::limit($region->desc, 230) }}</div>
             </div>
-            <div class="region__image"><img src="{{ asset('img/map/map/regions/Zaporizhzhya.jpg') }}"
+            <div class="region__image"><img src="{{ asset('img/map/regions/'.$region->photo) }}"
                     alt="{{ $region->title }}"></div>
             <div class="region__actions">
                 <a href="" class="like">

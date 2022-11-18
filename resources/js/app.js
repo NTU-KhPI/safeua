@@ -1,4 +1,5 @@
 import './bootstrap';
+import './tmp/burger';
 
 import Alpine from 'alpinejs';
 

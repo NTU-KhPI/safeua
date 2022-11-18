@@ -1,0 +1,259 @@
+.header{
+    width: 100%;
+    box-shadow: 0px 12px 46px rgba(0, 0, 0, 0.16);
+}
+.header .container{
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*-----------------------
+    Logo TextLogo Slogan
+-------------------------*/
+.header__rowLogo, .header__menu{
+    display: flex;
+    align-items: center;
+}
+.rowLogo__texts{margin-left: 10px;}
+.text_logo{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    letter-spacing: 0.06em;
+}
+.text_slogan{
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.1em;
+}
+
+/*-------------------
+     menu_body
+----------------------*/
+.menu__list > li{
+    list-style: none;
+    float: left;
+}
+.menu__list{
+    display: flex;
+    align-items: center;
+}
+.menu__items{
+    margin-right: 22px;
+    padding: 2px 0;
+}
+.menu__items:hover{
+    padding-bottom: 0;
+    border-bottom: 2px solid #4169E1;
+}
+.menu__items.active{
+    padding-bottom: 0;
+    border-bottom: 2px solid #4169E1;
+}
+.menu__link{
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+}
+/*-------------------
+    login and register
+----------------------*/
+.log_in{
+    padding: 2px 0;
+    margin-left: 22px;
+    color: #393939;
+    font-weight: 500;
+}
+.register{
+    background-color: #4169E1;
+    padding: 9px 28px;
+    border-radius: 50px;
+    margin-left: 22px;
+    color: #fff;
+    font-weight: 500;
+}
+.log_in:hover{
+    padding-bottom: 0;
+    border-bottom: 2px solid #4169E1;
+}
+.log_in.active{
+    padding-bottom: 0;
+    border-bottom: 2px solid #4169E1;
+}
+
+.register:hover{
+    box-shadow: 0 2px 3px rgb(68, 0, 255);
+    color: #fff;
+}
+.register:active{
+    margin-top: 3px;
+}
+.btn__icon-profile{
+    display: none;
+    max-width: 26px;
+    margin-left: 15px;
+    height: auto;
+}
+
+/*-------------------
+     dropdown-menu-header
+----------------------*/
+
+.btn-menu-header{
+    color: #393939;
+    border: none;
+}
+.btn-menu-header:hover{
+    background-color: transparent;
+    color: #393939;
+}
+.dropdown-group:not(.dropdown-group:last-child){
+    margin-right: 22px;
+}
+.dropdown-menu-header{
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 12px 12px 46px rgba(0, 0, 0, 0.16);
+}
+.dropdown-item-header{
+    padding: 10px 15px;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+}
+.dropdown-item-header:hover{
+    color: #4169E1;
+    background-color: #ececec;
+    border-radius: 10px;
+}
+
+/*-------------------
+     burger_button
+----------------------*/
+.menu__icon{
+    display: none;
+    margin-left: 22px;
+    width: 25px;
+    height: 26px;
+    position: relative;
+    cursor: pointer;
+}
+.icon__lines{
+    margin-top: 12px;
+}
+.icon__lines, .icon__lines::before, .icon__lines::after{
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background-color: #393939;
+    transition: .4s;
+}
+.icon__lines::before{
+    content: '';
+    top: -10px;
+}
+.icon__lines::after{
+    content: '';
+    top: 10px;
+}
+/* Animated Menu Icon */
+.menu__icon._change .icon__lines{
+    background-color: #39393900;
+}
+.menu__icon._change .icon__lines::before{
+    transform: translate(0, 10px) rotate(-45deg);
+}
+.menu__icon._change .icon__lines::after{
+    transform: translate(0, -10px) rotate(45deg);
+}
+
+
+
+
+
+
+/* @media для адаптиву і чуйного nav меню*/
+@media screen and (max-width: 992px) { 
+    .menu__icon{
+        display: flex;
+    }
+    .header{
+        position: relative;
+        z-index: 5;
+    }
+    .menu__body{
+        position: absolute;
+        z-index: 2;
+        top: 92px;
+        left: 0;
+        padding: 0 8%;
+        width: 100%;
+        background-color: #e4d8f9;
+        box-shadow: 0px 12px 15px #0000004d;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: all 0.4s ease 0s;
+    }
+    .menu__body._active{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+    .menu__list{
+        display: block;
+        margin: 15px 0;
+        text-align: end;
+    }
+    .menu__list > li{
+        float: none;
+    }
+    .menu__items{
+        padding: 0;
+        margin: 0 0 20px;
+    }
+    .menu__items:hover, .menu__items.active{
+        border-bottom: none;
+    }
+    .menu__items.active .menu__link, .menu__items:hover .menu__link{
+        color: #4169E1;
+    }
+    .menu__link{
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+@media screen and (max-width: 500px){
+    .header__logo{
+        max-width: 60px;
+        height: auto;
+    }
+    .text_logo{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 0.06em;
+    }
+    .text_slogan{
+        font-size: 12px;
+        line-height: 19px;
+        letter-spacing: 0.1em;
+    }
+    .menu__icon{
+        margin-left: 15px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .btn__login{
+        padding: 0;
+        background: none;
+        border-radius: none;
+    }
+    .btn__icon-profile{display: flex;}
+    .log_in{display: none;}
+}

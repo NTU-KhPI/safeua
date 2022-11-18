@@ -1,21 +1,22 @@
-import burger from './burger';
-import { GoOnTopbyScroll } from './animations';
-import InitCustomSelect from './cs';
-import InitTooltips, { InitDropDownMenu } from './tippy';
+import burger from './modules/burger';
+import { GoOnTopbyScroll } from './modules/animations';
+import InitCustomSelect from './modules/cs';
+import { InitRegionTooltips, InitDropDownMenu } from './modules/tippy';
 
 
 $(document).ready(function () {
 
-
     // Меню бургер
-    burger();
-    // Прокрутка наверх в подвале
+    burger($('burger-menu'));
+
+    // Прокрутка наверх по стрелке в футере
     GoOnTopbyScroll();
     InitDropDownMenu('#auth-user-button', '.auth-user-actions__wrapper');
+
     // Кастомные списки
     InitCustomSelect('#language-select');
     InitCustomSelect('.sort__items');
 
     // Всплывающие подсказки по регионам
-    InitTooltips('.land');
+    InitRegionTooltips('.land');
 });

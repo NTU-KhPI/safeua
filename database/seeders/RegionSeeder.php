@@ -20,6 +20,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Chernihiv',
@@ -27,6 +28,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Dnipro',
@@ -34,6 +36,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Donetsk',
@@ -41,6 +44,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Kharkiv',
@@ -48,6 +52,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Kherson',
@@ -55,6 +60,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Khmelnytskyy',
@@ -62,6 +68,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Mykolayiv',
@@ -69,6 +76,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Poltava',
@@ -76,6 +84,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Vinnytsya',
@@ -83,6 +92,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Zaporizhzhya',
@@ -90,6 +100,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Zhytomyr',
@@ -97,6 +108,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Sevastpol',
@@ -104,6 +116,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Crimea',
@@ -111,6 +124,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Kirovohrad',
@@ -118,6 +132,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Luhansk',
@@ -125,6 +140,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Sumy',
@@ -132,6 +148,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Kyiv-сity',
@@ -139,6 +156,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Kyiv',
@@ -146,6 +164,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Ternopil',
@@ -153,6 +172,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Chernivtsi',
@@ -160,6 +180,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Ivano-Frankivsk',
@@ -167,6 +188,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Rivne',
@@ -174,6 +196,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Volyn',
@@ -181,6 +204,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Lviv',
@@ -188,6 +212,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Transcarpathia',
@@ -195,6 +220,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
             [
                 'name' => 'Odessa',
@@ -202,6 +228,7 @@ class RegionSeeder extends Seeder
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
+                'photo' => 'Zaporizhzhya.jpg',
             ],
         ];
         \DB::table('regions')->insert($regions);

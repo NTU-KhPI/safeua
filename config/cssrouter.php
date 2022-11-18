@@ -1,4 +1,5 @@
 <?php return [
     'home' => 'home',
-    'profile' => 'profile'
+    'profile' => 'profile',
+	'map' => 'map',
 ];

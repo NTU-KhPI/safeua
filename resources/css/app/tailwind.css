@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply text-base xl:text-[15px] lg:text-sm sm:text-[13px];
+	}
+}
+
+@layer components {
+	.container {
+		@apply max-w-[1600px];
+	}
+	.menu__list{
+		@apply gap-x-12 xl:gap-x-10 lg:gap-x-8 md:gap-x-6;
+	}
+}

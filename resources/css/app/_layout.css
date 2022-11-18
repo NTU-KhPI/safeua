@@ -1,0 +1,19 @@
+/* Шрифты */
+@import "fonts";
+
+/* Обнуление */
+@import "_reset";
+
+/* Переменные */
+@import "_vars";
+
+
+body {
+	width: 100%;
+	font-weight: $regular;
+	color: $maintxtcolor;
+
+	&._lock {
+		overflow: hidden;
+	}
+}

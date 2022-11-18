@@ -1,0 +1,126 @@
+@import "tippy";
+
+
+.map-page {
+	padding-top: $headerheight;
+	background-color: $mainbgc;
+
+	&__container {
+		min-height: calc(100vh - $headerheight);
+		min-height: inherit;
+		padding-top: 70px;
+		padding-bottom: 80px;
+
+		@media(max-width:$bp760) {
+			min-height: auto;
+		}
+	}
+}
+
+.map {
+	display: flex;
+	justify-content: center;
+	filter: drop-shadow(0px 4px 54px rgba(0, 0, 0, 0.11));
+	
+	svg, object[type="image/svg+xml"] {
+		width: 100%;
+		max-width: $mapwidth;
+	}
+}
+
+.tooltip-regions {
+	display: none;
+	&__items {}
+}
+
+.region {
+	filter: drop-shadow(0px 8px 54px rgba(0, 0, 0, 0.11));
+	border-radius: 1em;
+	padding: 15px 10px;
+	background: #F1F4F8;
+	margin: 0 auto;
+	max-width: $tipwidth;
+
+	@media (max-width: $bp1366) {
+		max-width: calc($tipwidth - 50px);
+	}
+
+	& > *:not(:last-child) {
+		margin-bottom: 1em;
+	}
+
+	&__content {
+	 &	>*:not(:last-child) {
+			margin-bottom: 1.2em;
+		}
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 1.1em;
+		font-weight: $bold;
+	}
+
+	&__desc {}
+
+	&__actions {
+		margin-left: 0.5em;
+		margin-top: 1.5em;
+		display: flex;
+		align-items: center;
+		gap: 1.1em;
+
+		a {
+			display: block;
+			flex: 0 0 26px;
+
+			object,
+			svg,
+			img {
+				display: block;
+				height: auto;
+				max-width: 100%;
+			}
+
+			&:hover {}
+
+			& svg path {
+				transition: all 0.3s ease-in;
+			}
+
+			&.like:hover path {
+				stroke: red;
+				fill: red;
+				filter: drop-shadow(1px 2px 1px rgb(0 0 0 / 0.4));
+			}
+
+			&.donate:hover path {
+				fill: rgb(165, 165, 42);
+			}
+
+			&.share:hover path {
+				stroke: blue;
+				fill: blue;
+				filter: drop-shadow(2px 3px 1px rgb(0 0 0 / 0.4));
+			}
+		}
+	}
+
+	&__more {
+		flex: 1 1 auto;
+		font-size: 0.9em;
+		color: $headercolor;
+		text-decoration: underline;
+		text-align: right;
+	}
+}

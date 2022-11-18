@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoArchives\PhotoUploadController;
 
+use App\Http\Controllers\MapController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,5 +38,11 @@ Route::get('/main', function () {
 // Route::post('/test', [PhotoUploadController::class, 'store'])->name('test');
 
 Route::resource('test', PhotoUploadController::class);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/map', [MapController::class, 'index'])->name('map');
 
 require __DIR__.'/auth.php';

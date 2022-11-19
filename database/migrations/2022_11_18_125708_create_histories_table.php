@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,13 +13,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('histories', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('history_id');
             $table->string('title');
             $table->string('tag');
             $table->longText('body')->nullable();
             $table->string('preview')->nullable();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('region_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('region_id')->nullable();
+            $table->foreign('region_id')->references('region_id')->on('regions')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('views')->nullable();
             $table->unsignedBigInteger('likes')->nullable();
             $table->unsignedBigInteger('shares')->nullable();
@@ -35,6 +36,13 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('histories', function (Blueprint $table)
+        {
+            $table->dropForeign('histories_user_id_foreign');
+            $table->dropColumn('user_id');
+            $table->dropForeign('histories_region_id_foreign');
+            $table->dropColumn('region_id');
+        });
         Schema::dropIfExists('histories');
     }
 };

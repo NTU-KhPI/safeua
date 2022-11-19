@@ -15,13 +15,15 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'user_id';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'name_f',
         'email',
         'password',
     ];
@@ -47,6 +49,6 @@ class User extends Authenticatable
 
     public function histories()
     {
-       return $this->hasMany(History::class, 'id', 'user_id');
+        return $this->hasMany(History::class, 'user_id', 'user_id');
     }
 }

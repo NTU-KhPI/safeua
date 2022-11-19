@@ -11,8 +11,10 @@ class City extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'city_id';
+
     public function region()
     {
-       return $this->belongsTo(Region::class, 'region_id', 'id');
+       return $this->belongsTo(Region::class, 'region_id', 'region_id');
     }
 }

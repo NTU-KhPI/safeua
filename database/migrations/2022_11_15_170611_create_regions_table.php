@@ -14,9 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('regions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 50)->unique();
-            $table->string('title');
+            $table->bigIncrements('region_id');
+            $table->string('name', 100)->unique()->default('');
             $table->text('desc')->nullable();
             $table->string('photo')->nullable();
         });

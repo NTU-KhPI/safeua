@@ -32,7 +32,7 @@
                 @auth
                     <div class="dropdown-group">
                         <button type="button" class="btn-menu-header dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }}
+                            {{ Auth::user()->name_f }}
                         </button>
                         <div class="dropdown-menu-header dropdown-menu dropdown-menu-right">
                             <form method="POST" action="{{ route('logout') }}">

@@ -11,7 +11,7 @@ class PhotoArchives extends Model
     protected $fillable = [
         'user_id',
         'filename',
-        'origim',
+        'origin',
         'description',
         'region',
         'count_likes',

@@ -5,7 +5,7 @@ namespace App\Filters;
 class PostFilter extends QueryFilter{
     public function region_id($id = null){
         return $this->builder->when($id, function($query) use($id){
-            $query->where('reion_id', $id);
+            $query->where('region_id', $id);
         });
     }
 

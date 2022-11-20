@@ -31,6 +31,7 @@ return new class extends Migration
             $table->boolean('hide_birthday')->default(false);
             $table->boolean('hide_phone')->default(false);
             $table->boolean('hide_native_cite')->default(false);
+
         });
     }
 

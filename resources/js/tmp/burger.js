@@ -1,6 +1,6 @@
 "use strict"
 const burgerIcon = document.querySelector(".menu__icon");
-const navMenu = document.querySelector(".menu__body");
+const navMenu = document.querySelector(".menu");
 
 if(burgerIcon != null && navMenu != null){
     burgerIcon.addEventListener("click", function(e){

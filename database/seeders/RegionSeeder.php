@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class RegionSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class RegionSeeder extends Seeder
         $regions = [
             [
                 'name' => 'Cherkasy',
-                'title' => 'Черкаська обл.',
+                'title' => 'Черкаська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -24,7 +25,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Chernihiv',
-                'title' => 'Чернігівська обл.',
+                'title' => 'Чернігівська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -32,7 +33,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Dnipro',
-                'title' => 'Дніпровська обл.',
+                'title' => 'Дніпровська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -40,7 +41,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Donetsk',
-                'title' => 'Донецька обл.',
+                'title' => 'Донецька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -48,7 +49,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Kharkiv',
-                'title' => 'Харківська обл.',
+                'title' => 'Харківська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -56,7 +57,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Kherson',
-                'title' => 'Херсонська обл.',
+                'title' => 'Херсонська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -64,7 +65,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Khmelnytskyy',
-                'title' => 'Хмельницька обл.',
+                'title' => 'Хмельницька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -72,7 +73,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Mykolayiv',
-                'title' => 'Миколаївська обл.',
+                'title' => 'Миколаївська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -80,7 +81,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Poltava',
-                'title' => 'Полтавська обл.',
+                'title' => 'Полтавська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -88,7 +89,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Vinnytsya',
-                'title' => 'Вінницька обл.',
+                'title' => 'Вінницька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -96,7 +97,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Zaporizhzhya',
-                'title' => 'Запорізька обл.',
+                'title' => 'Запорізька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -104,7 +105,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Zhytomyr',
-                'title' => 'Житомирська обл.',
+                'title' => 'Житомирська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -128,7 +129,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Kirovohrad',
-                'title' => 'Кіровоградська обл.',
+                'title' => 'Кіровоградська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -136,7 +137,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Luhansk',
-                'title' => 'Луганська обл.',
+                'title' => 'Луганська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -144,7 +145,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Sumy',
-                'title' => 'Сумська обл.',
+                'title' => 'Сумська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -160,7 +161,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Kyiv',
-                'title' => 'Київська обл.',
+                'title' => 'Київська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -168,7 +169,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Ternopil',
-                'title' => 'Тернопільська обл.',
+                'title' => 'Тернопільська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -176,7 +177,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Chernivtsi',
-                'title' => 'Чернівецька обл.',
+                'title' => 'Чернівецька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -184,7 +185,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Ivano-Frankivsk',
-                'title' => 'Івано-Франківська обл.',
+                'title' => 'Івано-Франківська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -192,7 +193,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Rivne',
-                'title' => 'Рівненська обл.',
+                'title' => 'Рівненська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -200,7 +201,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Volyn',
-                'title' => 'Волинська обл.',
+                'title' => 'Волинська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -208,7 +209,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Lviv',
-                'title' => 'Львівська обл.',
+                'title' => 'Львівська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -216,7 +217,7 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Transcarpathia',
-                'title' => 'Закарпатська обл.',
+                'title' => 'Закарпатська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
@@ -224,13 +225,13 @@ class RegionSeeder extends Seeder
             ],
             [
                 'name' => 'Odessa',
-                'title' => 'Одеська обл.',
+                'title' => 'Одеська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
         ];
-        \DB::table('regions')->insert($regions);
+        DB::table('regions')->insert($regions);
     }
 }

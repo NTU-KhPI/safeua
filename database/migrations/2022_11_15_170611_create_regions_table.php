@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->bigIncrements('region_id');
             $table->string('name', 100)->unique()->default('');
+            $table->string('title');
             $table->text('desc')->nullable();
             $table->string('photo')->nullable();
         });

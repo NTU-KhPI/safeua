@@ -1,37 +1,38 @@
 @forelse ($histories as $history)
-<div class="posts-page__post post post-{{$history->id}}">
-    <div class="post-decor post-decor_left"
-        style="background: url('{{ asset('img/map/posts/post-decor-left.png') }}') 0 0/contain no-repeat">
+<div class="histories-page__history history history-{{$history->history_id}}">
+    <div class="history-decor history-decor_left"
+        style="background: url('{{ asset('img/histories/history-decor-left.png') }}') 0 0/contain no-repeat">
     </div>
-    <div class="post-decor post-decor_right"
-        style="background: url('{{ asset('img/map/posts/post-decor-right.png') }}') 0 0/contain no-repeat">
+    <div class="history-decor history-decor_right"
+        style="background: url('{{ asset('img/histories/history-decor-right.png') }}') 0 0/contain no-repeat">
     </div>
-    <div class="post__body">
+    <div class="history__body">
         <div class="sender">
             <a href="" class="sender-photo">
-                <img src="{{ asset('img/users/'.$history->user->avatar) }}" alt="{{ $history->user->name }}">
+                <img src="{{ asset('img/users/'.$history->user->avatar) }}" alt="{{ $history->user->name_f }}">
             </a>
             <div class="sender-data">
-                <a href="" title="Перейти на профіль" class="sender-name">{{ $history->user->name }}</a>
-                <a href="" title="Перейти до історій пов'язаних з цим регіоном" class="sender-location">{{
-                    $history->region->title }}</a>
+                <a href="" title="Перейти на профіль" class="sender-name">{{  $history->user->name_f.' '.$history->user->name_s }}</a>
+                <a href="" title="Перейти до історій пов'язаних з цим регіоном" class="sender-location">{{ Str::swap([
+                    'область' => 'обл.'
+                ], $history->region->title)  }}</a>
             </div>
         </div>
-        <div class="post__image">
+        <div class="history__image">
             <img src="{{ $history->preview }}" alt="{{ $history->title }}">
         </div>
-        <div class="post__block-text block-text">
+        <div class="history__block-text block-text">
             <h3 class="block-text__title">{{ $history->title }}</h3>
             <div class="block-text__content">{{ $history->body }}</div>
         </div>
     </div>
-    <div class="post__footer">
-        <div class="post__actions actions">
+    <div class="history__footer">
+        <div class="history__actions actions">
             <button type="button" class="action views">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 0 80.794 80.794" style="enable-background:new 0 0 80.794 80.794;"
                     xml:space="preserve">
-                    <title>Перегляди</title>
+                    <title>{{ $history->views }}</title>
                     <g>
                         <g>
                             <path d="M79.351,38.549c-0.706-0.903-17.529-22.119-38.953-22.119c-21.426,0-38.249,21.216-38.955,22.119L0,40.396l1.443,1.847
@@ -45,31 +46,31 @@
                         </g>
                     </g>
                 </svg>
-                <span class="action__value" id="views-count">{{ $history->views }}</span>
+                <span class="action__value" id="views-count">{{ $history->number_format_short($history->views) }}</span>
             </button>
-            <button type="button" class="action likes">
+            <button type="button" class="action likes" title="Лайкнути">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 47.5 47.5">
-                    <title>Лайкнути</title>
+                    <title>{{ $history->likes }}</title>
                     <g transform="matrix(1.25 0 0 -1.25 0 47.5)">
                         <path fill="transparent" stroke="black"
                             d="M3.067 25.68c0 8.799 12.184 12.06 15.933 1.874 3.749 10.186 15.933 6.925 15.933-1.874C34.933 16.12 19 3.999 19 3.999S3.067 16.12 3.067 25.68" />
                     </g>
                 </svg>
-                <span class="action__value" id="likes-count">{{ $history->likes }}</span>
+                <span class="action__value" id="likes-count">{{ $history->number_format_short($history->likes) }}</span>
             </button>
-            <button type="button" class="action shares">
+            <button type="button" class="action shares" title="Поділитися">
                 <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 30 30">
-                    <title>Поділитися</title>
+                    <title>{{ $history->shares }}</title>
                     <g>
                         <path
                             d="M 23 3 A 4 4 0 0 0 19 7 A 4 4 0 0 0 19.09375 7.8359375 L 10.011719 12.376953 A 4 4 0 0 0 7 11 A 4 4 0 0 0 3 15 A 4 4 0 0 0 7 19 A 4 4 0 0 0 10.013672 17.625 L 19.089844 22.164062 A 4 4 0 0 0 19 23 A 4 4 0 0 0 23 27 A 4 4 0 0 0 27 23 A 4 4 0 0 0 23 19 A 4 4 0 0 0 19.986328 20.375 L 10.910156 15.835938 A 4 4 0 0 0 11 15 A 4 4 0 0 0 10.90625 14.166016 L 19.988281 9.625 A 4 4 0 0 0 23 11 A 4 4 0 0 0 27 7 A 4 4 0 0 0 23 3 z" />
                     </g>
                 </svg>
-                <span class="action__value" id="shares-count">{{ $history->shares }}</span>
+                <span class="action__value" id="shares-count">{{ $history->number_format_short($history->shares) }}</span>
             </button>
-            <button type="button" class="action donate">
+            <button type="button" class="action donate" title="Задонатити">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <title>Задонатити</title>
                     <g>
@@ -80,7 +81,7 @@
                 </svg>
             </button>
         </div>
-        <div class="post__date"><span class="md:hidden">Дата публікації: </span><time id="post-time"
+        <div class="history__date"><span class="md:hidden">Дата публікації: </span><time id="history-time"
                 datetime="{{ $history->updated_at }}">{{
                 $history->updated_at->format('d F, H:i') }}</time>
         </div>
@@ -88,7 +89,7 @@
 </div>
 @empty
 @if(($histories->total() <= 0) or ($histories->total() < $histories->count()))
-        <div class="exception text-red-800 text-3xl xl:text-2xl lg:text-xl md:text-lg  mt-8 xl:mt-5 md:mt-3">Постів не
+        <div class="exception text-red-800 text-3xl xl:text-2xl lg:text-xl md:text-lg  mt-8 xl:mt-5 md:mt-3">Історій не
             знайдено або сталася помилка</div>
         @endif
         @endforelse

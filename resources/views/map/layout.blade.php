@@ -61,11 +61,11 @@
                     <div class="auth-user-avatar"><img src="{{ asset('img/users/'.Auth::user()->avatar) }}" alt="Me">
                     </div>
                     <div class="auth-user-name">
-                        {{ Auth::user()->name }}
+                        {{ Auth::user()->name_f }}
                     </div>
                     <div class="auth-user-actions__wrapper hidden">
                         <ul class="auth-user-actions">
-                            <li class="auth-user-action"><a href="{{ route('dashboard') }}">Налаштування</a></li>
+                            <li class="auth-user-action"><a href="{{ route('profile') }}">Профіль</a></li>
                             <li class="auth-user-action">
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
@@ -89,9 +89,6 @@
             @endif
             @endauth
             @endif
-            <!-- Кнопка входа -->
-            {{-- <div class="header__button"><a href="" class="button button_transparent"><span>Увійти</span></a></div>
-            <div class="header__button xl:hidden"><a href="" class="button"><span>Реєстрація</span></a></div> --}}
         </div>
     </header>
 

@@ -6,7 +6,7 @@ export function InitRegionTooltips(mapmark) {
 
     $(mapmark).each(function (index, mark) {
 
-        const regionName = $(mark).attr('data-region');
+        const regionName = $(mark).attr('data-region-id');
         const region = $('.tooltip-regions__items').find('.region-tip-card[id="' + regionName + '"]');
 
         if (!!($(region).html())) {

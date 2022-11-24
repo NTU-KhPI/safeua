@@ -16,216 +16,189 @@ class RegionSeeder extends Seeder
     {
         $regions = [
             [
-                'name' => 'Cherkasy',
-                'title' => 'Черкаська область',
+                'name' => 'Черкаська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Chernihiv',
-                'title' => 'Чернігівська область',
+                'name' => 'Чернігівська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Dnipro',
-                'title' => 'Дніпровська область',
+                'name' => 'Дніпровська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Donetsk',
-                'title' => 'Донецька область',
+                'name' => 'Донецька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Kharkiv',
-                'title' => 'Харківська область',
+                'name' => 'Харківська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Kherson',
-                'title' => 'Херсонська область',
+                'name' => 'Херсонська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Khmelnytskyy',
-                'title' => 'Хмельницька область',
+                'name' => 'Хмельницька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Mykolayiv',
-                'title' => 'Миколаївська область',
+                'name' => 'Миколаївська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Poltava',
-                'title' => 'Полтавська область',
+                'name' => 'Полтавська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Vinnytsya',
-                'title' => 'Вінницька область',
+                'name' => 'Вінницька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Zaporizhzhya',
-                'title' => 'Запорізька область',
+                'name' => 'Запорізька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Zhytomyr',
-                'title' => 'Житомирська область',
+                'name' => 'Житомирська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Sevastpol',
-                'title' => 'м. Севастополь',
+                'name' => 'м. Севастополь',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Crimea',
-                'title' => 'Крим',
+                'name' => 'Крим',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Kirovohrad',
-                'title' => 'Кіровоградська область',
+                'name' => 'Кіровоградська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Luhansk',
-                'title' => 'Луганська область',
+                'name' => 'Луганська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Sumy',
-                'title' => 'Сумська область',
+                'name' => 'Сумська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Kyiv-сity',
-                'title' => 'м. Київ',
+                'name' => 'м. Київ',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Kyiv',
-                'title' => 'Київська область',
+                'name' => 'Київська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Ternopil',
-                'title' => 'Тернопільська область',
+                'name' => 'Тернопільська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Chernivtsi',
-                'title' => 'Чернівецька область',
+                'name' => 'Чернівецька область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Ivano-Frankivsk',
-                'title' => 'Івано-Франківська область',
+                'name' => 'Івано-Франківська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Rivne',
-                'title' => 'Рівненська область',
+                'name' => 'Рівненська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Volyn',
-                'title' => 'Волинська область',
+                'name' => 'Волинська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Lviv',
-                'title' => 'Львівська область',
+                'name' => 'Львівська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Transcarpathia',
-                'title' => 'Закарпатська область',
+                'name' => 'Закарпатська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',
                 'photo' => 'Zaporizhzhya.jpg',
             ],
             [
-                'name' => 'Odessa',
-                'title' => 'Одеська область',
+                'name' => 'Одеська область',
                 'desc' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident repudiandae commodi inventore quis
                 itaque maiores dolores suscipit dolorem, excepturi, laudantium placeat ea ab beatae voluptatum eos
                 aspernatur? Reprehenderit libero fugit soluta cumque ipsum.',

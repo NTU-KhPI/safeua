@@ -67,7 +67,7 @@
 
     font-weight: 500;
 }
-.register:visited{
+.register:visited, .register:link{
     color: #fff;
 }
 .register{

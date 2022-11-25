@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoArchives\PhotoUploadController;
+use App\Http\Controllers\PhotoArchives\PhotoViewController;
 
 use App\Http\Controllers\MapController;
 
@@ -32,6 +33,7 @@ Route::get('/photo-archives', function () {
 })->name('main');
 
 Route::resource('test', PhotoUploadController::class);
+Route::get('/photo-archives', [PhotoViewController::class, 'view'])->name('photo-archives');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

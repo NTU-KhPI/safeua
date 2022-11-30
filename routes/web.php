@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PhotoArchives\PhotoUploadController;
-use App\Http\Controllers\Map\MapController;
+use App\Http\Controllers\PhotoArchives\PhotoViewController;
+
+use App\Http\Controllers\MapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/', function () {
 
 Route::get('/profile', function () {
     return view('profile.profile');
-})->name('profile');
+});
 
 Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -32,6 +33,7 @@ Route::get('/photo-archives', function () {
 })->name('main');
 
 Route::resource('test', PhotoUploadController::class);
+Route::get('/photo-archives', [PhotoViewController::class, 'view'])->name('photo-archives');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -39,13 +41,6 @@ Route::get('/dashboard', function () {
 
 Route::get('/map', [MapController::class, 'index'])->name('map');
 // Route::get('/histories/{pageNum}', [MapController::class, 'loadMoreHistories'])->name('map.moreHistories');
-Route::get('/histories', [MapController::class, 'latestHistory'])->name('map.moreHistories');
+//Route::get('/histories', [MapController::class, 'latestHistory'])->name('map.moreHistories');
 
-require __DIR__ . '/auth.php';
-
-
-// Route::get('/test', function () {
-//     return view('photo-archives/test');
-// })->name('test');
-// Route::get('/test', [PhotoUploadController::class, 'index']);
-// Route::post('/test', [PhotoUploadController::class, 'store'])->name('test');
+require __DIR__.'/auth.php';

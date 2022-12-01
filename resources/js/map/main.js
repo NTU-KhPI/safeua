@@ -7,7 +7,7 @@ import { InitRegionTooltips, InitDropDownMenu } from './modules/tippy';
 $(document).ready(function () {
 
     // Меню бургер
-    burger($('burger-menu'));
+    burger($('.burger-menu'));
 
     // Прокрутка наверх по стрелке в футере
     GoOnTopbyScroll();

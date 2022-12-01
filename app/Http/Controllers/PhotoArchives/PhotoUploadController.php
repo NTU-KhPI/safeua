@@ -56,7 +56,7 @@ class PhotoUploadController extends Controller
         $image->origin = $imageRequest->getClientOriginalName();
         $image->description = $request->description;
         $image->region = $request->region;
-        $image->save(); 
+        $image->save();
 
         return back()->with('success', 'Image uploaded Successfully!');
     }

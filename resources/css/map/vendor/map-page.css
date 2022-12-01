@@ -21,7 +21,7 @@
 	display: flex;
 	justify-content: center;
 	filter: drop-shadow(0px 4px 54px rgba(0, 0, 0, 0.11));
-	
+
 	svg, object[type="image/svg+xml"] {
 		width: 100%;
 		max-width: $mapwidth;
@@ -33,7 +33,7 @@
 	&__items {}
 }
 
-.region {
+.region-tip-card {
 	filter: drop-shadow(0px 8px 54px rgba(0, 0, 0, 0.11));
 	border-radius: 1em;
 	padding: 15px 10px;
@@ -44,32 +44,41 @@
 	@media (max-width: $bp1366) {
 		max-width: calc($tipwidth - 50px);
 	}
+    &__region-info {
+        margin-bottom: 0.8em;
+        & .region-title {
+            color: $headercolor;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: $bold;
+            &:after {
+                margin-left: 0.5ch;
+                position:relative;
+                display: inline-block;
+                content:"";
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 0 7px 7px;
+                border-color: transparent transparent $headercolor transparent;
+            }
+	    }
+    }
+    &__history-content {
+        .history-title{
 
-	& > *:not(:last-child) {
-		margin-bottom: 1em;
-	}
-
-	&__content {
-	 &	>*:not(:last-child) {
-			margin-bottom: 1.2em;
-		}
-	}
-
-	&__image {
-		display: flex;
-		justify-content: center;
-		img {
-			display: block;
-			max-width: 100%;
-			height: auto;
-		}
-	}
-
-	&__title {
-		text-align: center;
-		font-size: 1.1em;
-		font-weight: $bold;
-	}
+        }
+        .history-preview {
+            margin-top: 0.75em;
+            display: flex;
+            justify-content: center;
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
 
 	&__desc {}
 

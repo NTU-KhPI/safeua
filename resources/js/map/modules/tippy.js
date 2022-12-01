@@ -7,7 +7,7 @@ export function InitRegionTooltips(mapmark) {
     $(mapmark).each(function (index, mark) {
 
         const regionName = $(mark).attr('data-region');
-        const region = $('.tooltip-regions__items').find('.region[id="' + regionName + '"]');
+        const region = $('.tooltip-regions__items').find('.region-tip-card[id="' + regionName + '"]');
 
         if (!!($(region).html())) {
             tooltips[index] = tippy(mark, {
@@ -22,7 +22,7 @@ export function InitRegionTooltips(mapmark) {
                 appendTo: document.body,
                 interactive: true,
                 interactiveBorder: 0,
-                content: '<div class="region" id="' + regionName + '">' + $(region).html() + '</div>',
+                content: '<div class="region-tip-card" id="' + regionName + '">' + $(region).html() + '</div>',
                 zIndex: 100,
             });
 

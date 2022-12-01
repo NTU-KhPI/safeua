@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhotoArchives\PhotoUploadController;
 use App\Http\Controllers\PhotoArchives\PhotoViewController;
+use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
 
 use App\Http\Controllers\MapController;
 
@@ -28,12 +28,9 @@ Route::get('/profile', function () {
 
 Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/photo-archives', function () {
-    return view('photo-archives/photo-archives');
-})->name('main');
-
-Route::resource('test', PhotoUploadController::class);
-Route::get('/photo-archives', [PhotoViewController::class, 'view'])->name('photo-archives');
+Route::resource('/photo-archives', PhotoViewController::class);
+Route::resource('/my-photos', MyPhotoViewController::class);
+// Route::resource('/test', PhotoViewController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

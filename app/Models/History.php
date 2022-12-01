@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Region;
 use App\Models\User;
+use App\Models\Photo;
 use App\Filters\QueryFilter;
 
 class History extends Model
@@ -24,6 +25,11 @@ class History extends Model
     public function user()
     {
        return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
+
+    public function photo()
+    {
+        return $this->belongsToMany(Photo::class, 'history_photo', 'history_id', 'photo_id');
     }
 
     // public function scopeFilter(Builder $builder, QueryFilter $filter){

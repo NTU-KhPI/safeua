@@ -8,14 +8,14 @@ use App\Models\History;
 use App\Models\Region;
 use App\Models\Photo;
 
-class PhotoViewController extends Controller
+class MyPhotoViewController extends Controller
 {
     public function index(Request $request){
-        // $history = History::all();
         $history = History::Paginate(9);
         $regions = Region::all();
-        return view("photo-archives.all-photos", compact('history', 'regions'));
+        return view("photo-archives.my-photos", compact('history', 'regions'));
         // return view("photo-archives.test", compact('history', 'photos', 'regions'));
+        // return view("photo-archives.test", compact('history'));
     }
     public function store(Request $request)
     {

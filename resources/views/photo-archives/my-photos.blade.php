@@ -1,32 +1,20 @@
 <x-guest-layout>
+    @if (Route::has('login'))
+        @auth
     <div class="container">
-        {{-- <h1>main photos</h1>
+
         
-        @if (Route::has('login'))
-            @auth
-                <h2>your ID</h2>
-                <p>{{ Auth::user()->id }}</p>
-            @endauth
-        @endif --}}
+    
+             
 
         <nav class="menu__photo">
-            <a href="" class="menu_photo_link active">Всі світлини</a>
-            @php
-                $lock = "locked"
-            @endphp
-            @if (Route::has('login'))
-                @auth    
-                    @php
-                        $lock = "unlocked"
-                    @endphp
-                @endauth
-            @endif
-            <a href="" class="menu_photo_link {{$lock}}">Мої світлини</a>
+            <a href="" class="menu_photo_link">Всі світлини</a>
+            <a href="" class="menu_photo_link active">Мої світлини</a>          
         </nav>
 
         <div class="menu__filters">
             <form action="#zatemnenie" method="GET">
-                <button class="open-window-button {{$lock}}">Поділитися світлиною</button>                
+                <button class="open-window-button">Поділитися світлиною</button>                
             </form>
             <form action="">
                 <select name="sort_photos" class="btn__filters">
@@ -46,11 +34,13 @@
             @if ($history->count())
                 <div class="section__grid">
                     @foreach ($history as $item)
-                        <figure class="grid__items">
-                            <img src="{{ asset($item->photo->value('file_location')) }}" alt="" class="items__img">
-                            <img src="{{ asset($item->photo->value('file_location')) }}" alt="" class="back__img">
-                            <figcaption class="items__figcaption">{{$item->title}}</figcaption>
-                        </figure>
+                        @if ($item->user()->value('user_id') == Auth::user()->user_id)
+                            <figure class="grid__items">
+                                <img src="{{ asset($item->photo->value('file_location')) }}" alt="" class="items__img">
+                                <img src="{{ asset($item->photo->value('file_location')) }}" alt="" class="back__img">
+                                <figcaption class="items__figcaption">{{$item->title}}</figcaption>
+                            </figure>
+                        @endif                  
                     @endforeach
                 </div>
                 <button class="load_more">Показати ще</button>
@@ -59,8 +49,6 @@
             @endif
             
         </section> 
-
-        {{-- Модальне вікно додавання історії з фото --}}
         @if (Route::has('login'))
             @auth
                 <div id="zatemnenie">
@@ -107,7 +95,7 @@
                                         <button type="submit" style="background-color: #4169E1" class="button-2" >ПУБЛІКАЦІЯ</button>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>               
                         </form>
                         </div>
                     </div> 
@@ -115,4 +103,7 @@
             @endauth
         @endif
     </div>
+       
+    @endauth
+    @endif
 </x-guest-layout>

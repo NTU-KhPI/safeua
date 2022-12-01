@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 
 use \App\Models\History;
+use \App\Models\Photo;
 use \App\Models\User;
 
 class DatabaseSeeder extends Seeder
@@ -19,7 +20,8 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(5)->create();
         $this->call(RegionSeeder::class);
-        History::factory(50)->create();
+        // Photo::factory(50)->create();
+        // History::factory(50)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

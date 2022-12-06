@@ -29,18 +29,26 @@
             <form action="#zatemnenie" method="GET">
                 <button class="open-window-button {{$lock}}">Поділитися світлиною</button>                
             </form>
-            <form action="">
-                <select name="sort_photos" class="btn__filters">
-                    <option class="btn__option__filters" value="" disabled selected>Сортувати</option>
-                    <option value="firstNewOnes">Спочатку нові</option>
-                    <option value="firstOldOnes">Спочатку старі</option>
-                </select>
-                <select name="filter_photos" class="btn__filters">
-                    <option value="" disabled selected>Фільтрувати</option>
-                    <option value="firstNewOnes">Регіон</option>
-                    <option value="firstOldOnes">Час</option>
-                </select>
-            </form>
+            <div class="filters">
+                <div class="dropdown-group">
+                    <button type="button" class="btn-menu-sort dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Сортувати
+                    </button>
+                    <div class="dropdown-menu-sort dropdown-menu">
+                        <button class="dropdown-item-sort dropdown-item" type="button">Спочатку нові</button>
+                        <button class="dropdown-item-sort dropdown-item" type="button">Спочатку старі</button>
+                    </div>
+                </div>
+                {{-- <div class="dropdown-group">
+                    <button type="button" class="btn-menu-filter dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Фільтр
+                    </button>
+                    <div class="dropdown-menu-filter dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item-filter dropdown-item" type="button">Регіон</button>
+                        <button class="dropdown-item-filter dropdown-item" type="button">Час</button>
+                    </div>
+                </div> --}}
+            </div>
         </div>
 
         <section class="section__photos">

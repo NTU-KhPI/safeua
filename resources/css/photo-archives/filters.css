@@ -1,0 +1,27 @@
+.filters .dropdown-group [type='button']{
+    background: #dadada;
+    position: relative;
+}
+.btn-menu-sort {
+    border-radius: 20px;
+    padding: 8px 56px;
+}
+
+.btn-menu-sort._active{
+    border-radius: 20px 20px 0 0;
+}
+
+.dropdown-menu-sort{
+    border-top: 1px solid #393939;    
+    width: 208.5px;
+    overflow: hidden;
+    padding: 0!important;
+    margin: 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    padding: 8px 56px;
+}
+
+.dropdown-item-sort{
+    padding: 10px!important;
+}

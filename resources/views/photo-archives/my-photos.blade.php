@@ -1,16 +1,18 @@
+@section('title')Мої фото@endsection
+
 <x-guest-layout>
     @if (Route::has('login'))
         @auth
-    <div class="container">   
+    <div class="container">
 
         <nav class="menu__photo">
             <a href="{{route('photos-index')}}" class="menu_photo_link">Всі світлини</a>
-            <a href="{{route('my-photos')}}" class="menu_photo_link active">Мої світлини</a>          
+            <a href="{{route('my-photos')}}" class="menu_photo_link active">Мої світлини</a>
         </nav>
 
         <div class="menu__filters">
             <form action="#zatemnenie" method="GET">
-                <button class="open-window-button">Поділитися світлиною</button>                
+                <button class="open-window-button">Поділитися світлиною</button>
             </form>
             <form action="">
                 <select name="sort_photos" class="btn__filters">
@@ -34,18 +36,18 @@
                             <img src="{{ asset($photo->file_location) }}" alt="" class="items__img">
                             <img src="{{ asset($photo->file_location) }}" alt="" class="back__img">
                             <figcaption class="items__figcaption">{{$photo->history->value('title')}}</figcaption>
-                        </figure>                  
+                        </figure>
                     @endforeach
                 </div>
                 {{-- <button class="load_more">Показати ще</button> --}}
                 {{-- {{ $photos->links() }} --}}
                 @include('photo-archives.paginate')
-                
+
             @else
                 <p class="text-center">Нічого немає</p>
             @endif
-            
-        </section> 
+
+        </section>
         @if (Route::has('login'))
             @auth
                 <div id="zatemnenie">
@@ -92,15 +94,15 @@
                                         <button type="submit" style="background-color: #4169E1" class="button-2" >ПУБЛІКАЦІЯ</button>
                                     </div>
                                 </div>
-                            </div>               
+                            </div>
                         </form>
                         </div>
-                    </div> 
-                </div>  
+                    </div>
+                </div>
             @endauth
         @endif
     </div>
-       
+
     @endauth
     @endif
 </x-guest-layout>

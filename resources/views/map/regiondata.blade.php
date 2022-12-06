@@ -1,16 +1,16 @@
-@foreach ($historiesByRegion as $historyByRegion)
-@isset($historyByRegion)
-<div class="region-tip-card" id="{{ $historyByRegion->region->name }}">
+@foreach ($latestHistories as $latestHistoryByRegion)
+@isset($latestHistoryByRegion)
+<div class="region-tip-card" id="{{ $latestHistoryByRegion->region->region_id }}">
     <div class="region-tip-card__region-info">
         <h3 class="region-title">{{ Str::swap([
             'область' => 'обл.'
-        ], $historyByRegion->region->title)  }}</h3>
+        ], $latestHistoryByRegion->region->name)  }}</h3>
     </div>
     <div class="region-tip-card__history-content">
-        <div class="history-title mb-1 font-bold">{{ Str::limit($historyByRegion->title, 50) }}</div>
-        <div class="history-desc">{{ Str::limit($historyByRegion->body, 150) }}</div>
-        <div class="history-preview"><img src="{{ $historyByRegion->preview }}"
-                alt="{{ $historyByRegion->region->name }}"></div>
+        <div class="history-title mb-1 font-bold">{{ Str::limit($latestHistoryByRegion->title, 50) }}</div>
+        <div class="history-desc">{{ Str::limit($latestHistoryByRegion->body, 150) }}</div>
+        <div class="history-preview"><img src="{{ $latestHistoryByRegion->preview }}"
+                alt="{{ $latestHistoryByRegion->region->name }}"></div>
     </div>
     <div class="region-tip-card__actions">
         <a href="" class="like">
@@ -46,7 +46,7 @@
                 </g>
             </svg>
         </a>
-        <div class="region-tip-card__more"><a href="" class="more" target="_blank">Читати далі</a></div>
+        <div class="region-tip-card__more"><a href="{{ route('historiesByRegion', $latestHistoryByRegion->region->region_id) }}" class="more" target="_blank">Читати далі</a></div>
     </div>
 </div>
 @endisset

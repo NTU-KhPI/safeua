@@ -1,11 +1,16 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Profile\ProfileController;
+
+use App\Http\Controllers\Map\MapController;
+use App\Http\Controllers\Histories\HistoriesController;
+
 use App\Http\Controllers\PhotoArchives\PhotoViewController;
 use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
 
-use App\Http\Controllers\MapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +30,7 @@ Route::get('/', function () {
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
-
-Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/photo-archives', [PhotoViewController::class, 'index'])->name('photos-index');
 Route::post('/photo-archives', [PhotoViewController::class, 'store'])->name('photos-store');
@@ -37,8 +41,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/map', [MapController::class, 'index'])->name('map');
+Route::get('/histories', [HistoriesController::class, 'index'])->name('histories');
+Route::get('/region/id={region}', [HistoriesController::class, 'HistoriesByRegion'])->name('historiesByRegion');
 
-require __DIR__.'/auth.php';
+Route::get('/histories/search', [HistoriesController::class, 'search'])->name('histories.search');
+
+require __DIR__ . '/auth.php';
 
 Route::get('/volonter', function () {
     return view('help.volonter');

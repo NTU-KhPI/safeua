@@ -1,5 +1,5 @@
 @forelse ($histories as $history)
-<div class="histories-page__history history history-{{$history->history_id}}">
+<div class="histories-page__history history" id="{{$history->history_id}}">
     <div class="history-decor history-decor_left"
         style="background: url('{{ asset('img/histories/history-decor-left.png') }}') 0 0/contain no-repeat">
     </div>
@@ -15,7 +15,7 @@
                 <a href="" title="Перейти на профіль" class="sender-name">{{  $history->user->name_f.' '.$history->user->name_s }}</a>
                 <a href="" title="Перейти до історій пов'язаних з цим регіоном" class="sender-location">{{ Str::swap([
                     'область' => 'обл.'
-                ], $history->region->title)  }}</a>
+                ], $history->region->name)  }}</a>
             </div>
         </div>
         <div class="history__image">
@@ -88,7 +88,7 @@
     </div>
 </div>
 @empty
-@if(($histories->total() <= 0) or ($histories->total() < $histories->count()))
+@if(($histories->total() <= 0))
         <div class="exception text-red-800 text-3xl xl:text-2xl lg:text-xl md:text-lg  mt-8 xl:mt-5 md:mt-3">Історій не
             знайдено або сталася помилка</div>
         @endif

@@ -7,25 +7,16 @@ use Illuminate\Http\Request;
 use App\Models\History;
 use App\Models\Region;
 use App\Models\Photo;
-use Illuminate\Support\Facades\Auth;
 
-class PhotoViewController extends Controller
+class MyPhotoViewController extends Controller
 {
     public function index(Request $request){
-        // $history = History::all();
-        // $history = History::Paginate(9);
-        $photos = Photo::Paginate(27);
+        $history = History::Paginate(9);
         $regions = Region::all();
-        return view("photo-archives.all-photos", compact('photos', 'regions'));
+        return view("photo-archives.my-photos", compact('history', 'regions'));
         // return view("photo-archives.test", compact('history', 'photos', 'regions'));
+        // return view("photo-archives.test", compact('history'));
     }
-    public function indexMy(Request $request){
-        $user_id = Auth::user()->user_id;
-        $photos = Photo::where('user_id', $user_id)->paginate(27);
-        $regions = Region::all();
-        return view("photo-archives.my-photos", compact('photos', 'regions'));           
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -42,7 +33,6 @@ class PhotoViewController extends Controller
         $photo = new Photo();
         $photo->file_location = $file_path;
         $photo->tag = $request->description;
-        $photo->user_id = $request->user_id;
         $photo->region_id = $request->region_id;
         $photo->save();
 

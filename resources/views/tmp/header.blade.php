@@ -21,8 +21,8 @@
                     UA
                 </button>
                 <div class="dropdown-menu-header dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item-header dropdown-item" type="button">Ukrainian</button>
-                    <button class="dropdown-item-header dropdown-item" type="button">English</button>
+                    <button class="dropdown-item-header dropdown-item" type="button">{{__('auth.ukrainian')}}</button>
+                    <button class="dropdown-item-header dropdown-item" type="button">{{__('auth.english')}}</button>
                 </div>
             </div>
 
@@ -45,10 +45,10 @@
                     </div>
 
                 @else
-                    <a href="{{ route('login') }}" class="log_in">Log in</a>
+                    <a href="{{ route('login') }}" class="log_in">{{__('auth.login')}}</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="register">Register</a>
+                        <a href="{{ route('register') }}" class="register">{{__('auth.register')}}</a>
                     @endif
                 @endauth
             @endif

@@ -1,8 +1,9 @@
 /*@import "home/styles.css";*/
 @import "tmp/reset-style.css";
 @import "tmp/header-style.css";
-@import "app/styles";
-@import "map/styles";
+@import "help/styles.css";
+/*@import "app/styles";*/
+/*@import "map/styles";*/
 
 @tailwind base;
 @tailwind components;

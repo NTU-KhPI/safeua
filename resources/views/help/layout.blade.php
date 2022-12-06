@@ -44,10 +44,9 @@
 
         <div class="col-md-3 text-end">
             <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#signin">
-                {{ __('auth.login') }}
+                Login
             </button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup">
-                {{ __('auth.signup') }}
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signup">Sign-up
             </button>
         </div>
     </div>

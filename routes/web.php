@@ -19,7 +19,7 @@ use App\Http\Controllers\MapController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/profile', function () {
     return view('profile.profile');
@@ -46,3 +46,7 @@ Route::get('/dashboard', function () {
 Route::get('/map', [MapController::class, 'index'])->name('map');
 
 require __DIR__.'/auth.php';
+
+Route::get('/volonter', function () {
+    return view('help.volonter');
+})->name('volonter');

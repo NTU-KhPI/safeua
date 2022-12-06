@@ -22,6 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RegionSeeder::class);
         City::factory(100)->create();
         User::factory(10)->create();
-        History::factory(120)->create();
+        History::factory(200)->create();
     }
 }

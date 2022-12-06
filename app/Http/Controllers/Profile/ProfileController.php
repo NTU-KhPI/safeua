@@ -16,7 +16,7 @@ class ProfileController extends Controller
 
         $regions = Region::select([
             'region_id',
-            'title'
+            'name'
         ])->get();
 
         return view('profile.profile', [
@@ -29,7 +29,7 @@ class ProfileController extends Controller
     {
         $user = auth()->user();
 
-         $request->validate([
+        $request->validate([
             'name_f' => ['required', 'string', 'max:255'],
             'name_s' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255'],
@@ -45,6 +45,5 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->route('profile');
-
     }
 }

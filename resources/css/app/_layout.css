@@ -19,6 +19,7 @@ body {
 	}
 }
 .main {
+    min-height: 100vh;
     &>section:first-child, &>article:first-child, &>div:first-child {
         padding-top: calc($headerheight + 1em);
     }

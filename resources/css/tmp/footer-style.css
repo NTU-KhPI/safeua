@@ -1,0 +1,35 @@
+.footer{
+  background-color: #ffffff;
+  box-shadow: 0px -12px 46px rgba(0, 0, 0, 0.16);
+}
+.footer_menu{
+    padding: 2% 0; /* уст. знач. полей вокруг содержимого элемента (короче, меняет размер строки с меню)*/
+    
+  }
+  .fmarklist{
+    list-style-type: none;/* изменяет вид маркера для элементов списка*/
+    padding: 0;
+    margin: 0;/* уст. величину отступа от каждого края элемента*/
+    text-align: center;
+  }
+  .fli{ display: inline-block; }/* ? генерирует блочный элемент, кот. обтекается другими элементами веб-страницы*/
+  .fli{
+    margin-left: 1%;/*настраиваю отступы от левого и правого краев*/
+    margin-right: 3%;
+  }
+  .footer_logo {
+    float: left;
+    margin-left: 4%;/*настраиваю отступы от левого и правого краев*/
+    margin-top: 2%;
+  }
+  .fa {
+    color: rgb(46, 42, 42);
+    text-decoration: none;/*добавляет всякие подчеркивания-перечеркивание, в д.сл. убирает*/
+    font-family: 'Nunito', sans-serif; 
+    font-style: normal;
+    font-weight: 480;
+    font-size: 100%;
+    line-height: 137%;
+  } 
+  .fa2{ color: rgb(	169,169,169); } /*DarkGray #A9A9A9*/
+  .fu { color: rgb(169, 169, 169); } 

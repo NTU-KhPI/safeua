@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Histories\HistoriesController;
 use App\Http\Controllers\PhotoArchives\PhotoUploadController;
+use App\Http\Controllers\PhotoArchives\PhotoViewController;
+
 use App\Http\Controllers\Map\MapController;
+use App\Http\Controllers\Profile\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,35 +23,25 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/profile', function () {
-    return view('profile.profile');
-})->name('profile');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
 
 Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/main', function () {
-    return view('photo-archives/main-photo-archives');
+Route::get('/photo-archives', function () {
+    return view('photo-archives/photo-archives');
 })->name('main');
 
 Route::resource('test', PhotoUploadController::class);
+Route::get('/photo-archives', [PhotoViewController::class, 'view'])->name('photo-archives');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/map', [MapController::class, 'index'])->name('map');
-Route::get('/histories', [HistoriesController::class, 'index'])->name('histories');
-Route::get('/region/{region}', [HistoriesController::class, 'index'])->name('historiesByRegion');
+// Route::get('/histories/{pageNum}', [MapController::class, 'loadMoreHistories'])->name('map.moreHistories');
+//Route::get('/histories', [MapController::class, 'latestHistory'])->name('map.moreHistories');
 
-// Route::get('/histories/search', [HistoriesController::class, 'index'])->name('histories.search');
-Route::get('/histories/search', [HistoriesController::class, 'index'])->name('histories.search');
-
-
-require __DIR__ . '/auth.php';
-
-
-// Route::get('/test', function () {
-//     return view('photo-archives/test');
-// })->name('test');
-// Route::get('/test', [PhotoUploadController::class, 'index']);
-// Route::post('/test', [PhotoUploadController::class, 'store'])->name('test');
+require __DIR__.'/auth.php';

@@ -1,3 +1,8 @@
+@section('title')Профіль@endsection
+@section('styles')<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">@endsection
+@section('scripts') <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>@endsection
+
 <x-app-layout>
     <section>
         <div class="container py-5">
@@ -110,7 +115,7 @@
                                     <select name="region_id" class="profile-input">
                                         <option value="0">Не вибрано</option>
                                         @foreach($regions as $region)
-                                            <option value="{{$region->region_id}}" @if($region->id === $user->region_id) selected @endif>{{$region->title}}</option>
+                                            <option value="{{$region->region_id}}" @if($region->id === $user->region_id) selected @endif>{{$region->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>

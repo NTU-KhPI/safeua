@@ -1,7 +1,9 @@
+@section('title')Усі фото@endsection
+
 <x-guest-layout>
     <div class="container">
         {{-- <h1>main photos</h1>
-        
+
         @if (Route::has('login'))
             @auth
                 <h2>your ID</h2>
@@ -15,11 +17,11 @@
                 $lock = "locked"
             @endphp
             @if (Route::has('login'))
-                @auth    
+                @auth
                     @php
                         $lock = "unlocked"
                     @endphp
-                    
+
                 @endauth
             @endif
             <a href="{{route('my-photos')}}" class="menu_photo_link {{$lock}}">Мої світлини</a>
@@ -27,7 +29,7 @@
 
         <div class="menu__filters">
             <form action="#zatemnenie" method="GET">
-                <button class="open-window-button {{$lock}}">Поділитися світлиною</button>                
+                <button class="open-window-button {{$lock}}">Поділитися світлиною</button>
             </form>
             <form action="">
                 <select name="sort_photos" class="btn__filters">
@@ -59,8 +61,8 @@
             @else
                 <p class="text-center">Нічого немає</p>
             @endif
-            
-        </section> 
+
+        </section>
 
         {{-- Модальне вікно додавання історії з фото --}}
         @if (Route::has('login'))
@@ -109,11 +111,11 @@
                                         <button type="submit" style="background-color: #4169E1" class="button-2" >ПУБЛІКАЦІЯ</button>
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </form>
                         </div>
-                    </div> 
-                </div>  
+                    </div>
+                </div>
             @endauth
         @endif
     </div>

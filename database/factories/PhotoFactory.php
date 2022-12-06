@@ -19,10 +19,10 @@ class PhotoFactory extends Factory
     public function definition()
     {
         return [
-            'tag' => $this->faker->word(),
+            'tag' => fake()->word(),
             'user_id' => User::get()->random()->user_id,
             'region_id' => Region::get()->random()->region_id,
-            'file_location' => $this->faker->imageUrl(1920, 1080)
-         ];
+            'file_location' => fake()->imageUrl(1920, 1080)
+        ];
     }
 }

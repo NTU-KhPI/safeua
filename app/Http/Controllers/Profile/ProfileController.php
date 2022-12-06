@@ -2,34 +2,37 @@
 
 namespace App\Http\Controllers\Profile;
 
-use App\Http\Controllers\Controller;
-use App\Models\Region;
 use App\Models\User;
+use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
     public function index(Request $request)
     {
-        $user = auth()->user();
+        if (Auth::check()) {
+            $user = auth()->user();
 
-        $regions = Region::select([
-            'region_id',
-            'title'
-        ])->get();
+            $regions = Region::select([
+                'region_id',
+                'name'
+            ])->get();
 
-        return view('profile.profile', [
-            'user' => $user,
-            'regions' => $regions
-        ]);
+            return view('profile.profile', [
+                'user' => $user,
+                'regions' => $regions
+            ]);
+        } else return redirect()->route('login');
     }
 
     public function update(Request $request)
     {
         $user = auth()->user();
 
-         $request->validate([
+        $request->validate([
             'name_f' => ['required', 'string', 'max:255'],
             'name_s' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255'],
@@ -45,6 +48,5 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->route('profile');
-
     }
 }

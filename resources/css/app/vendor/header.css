@@ -108,7 +108,7 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				padding: calc($headerheight + 40px) 30px 30px 30px;
+				padding: calc($headerheight + 2em) 30px 30px 30px;
 				transition: top 0.5s ease 0s;
 				z-index: -2;
 				overflow: auto;
@@ -116,16 +116,15 @@
 
 				&._active {
 					top: 0;
+                    transition: top 0.5s ease-out 0s;
 				}
 			}
-
 			&__list {
 				flex-direction: column;
-				row-gap: 2.5em;
-
+				row-gap: 2.3em;
 				&>li {
 					&>a {
-						font-size: 1.5em;
+						font-size: 1.4em;
 					}
 				}
 			}

@@ -1,9 +1,15 @@
 /*@import "home/styles.css";*/
 @import "tmp/reset-style.css";
+
+@import "app/styles";
+@import "map/styles";
+
 @import "tmp/header-style.css";
-@import "help/styles.css";
-/*@import "app/styles";*/
-/*@import "map/styles";*/
+@import "photo-archives/all-photos.css";
+@import "photo-archives/photo-paginate.css";
+@import "photo-archives/modal-add-photo.css";
+@import "tmp/footer-style.css";
+@import "profile/styles";
 
 @tailwind base;
 @tailwind components;

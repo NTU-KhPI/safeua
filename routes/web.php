@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhotoArchives\PhotoUploadController;
+use App\Http\Controllers\PhotoArchives\PhotoViewController;
+use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
 
 use App\Http\Controllers\MapController;
 
@@ -21,23 +22,15 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/profile', function () {
-    return view('profile.profile');
-});
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
 
 Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/main', function () {
-    return view('photo-archives/main-photo-archives');
-})->name('main');
-
-// Route::get('/test', function () {
-//     return view('photo-archives/test');
-// })->name('test');
-// Route::get('/test', [PhotoUploadController::class, 'index']);
-// Route::post('/test', [PhotoUploadController::class, 'store'])->name('test');
-
-Route::resource('test', PhotoUploadController::class);
+Route::get('/photo-archives', [PhotoViewController::class, 'index'])->name('photos-index');
+Route::post('/photo-archives', [PhotoViewController::class, 'store'])->name('photos-store');
+Route::get('/my-photos', [PhotoViewController::class, 'indexMy'])->name('my-photos');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

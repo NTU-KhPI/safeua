@@ -1,0 +1,222 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html {
+    height: 100%;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+*, * ::before *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #656565;
+}
+
+/*fon styles starts*/
+
+.intro{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.intro_title{
+    margin-bottom: 32px;
+    max-width: 504px;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 44px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.intro_subtitle{
+    margin-bottom: 32px;
+    max-width: 704px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.06em;
+    color: white;
+}
+
+.intro_button{
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.button_donat{
+    margin-right: 32px;
+    display: inline-block;
+    background: #4169E1 top;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: .08em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.button_anket{
+    display: inline-block;
+    background: transparent;
+    color: white;
+    padding: 11px 28px;
+    border-radius: 50px;
+    border: 3px solid #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.button_donat:hover, .button_donat:focus, .button_donat:active{
+    background: #3157ca;
+    color: white;
+}
+
+.button_anket:hover, .button_anket:focus, .button_anket:active{
+    opacity: .75;
+    color: white;
+}
+
+/*fon styles end*/
+
+/* under fon styles start */
+
+.volonter{
+    background-color: white;
+    background-size: contain;
+}
+
+.underintro{
+    margin-top: 104px;
+    margin-bottom: 48px;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.imgunder{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-right: 280px;
+}
+
+.anktitle{
+    margin-top: 25px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    color: #393939;
+}
+
+.anksubtitle{
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 0.06em;
+    color: #656565;
+}
+
+.button_zapanket{
+    display: inline-block;
+    background: #4169E1 top;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+.button_zapanket:hover, .button_zapanket:focus, .button_zapanket:active{
+    background: #3157ca;
+    color: white;
+}
+
+.trigger_title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #393939;
+}
+
+.trigger_subtitle{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+    color: #656565;
+}
+
+/* under fon styles end */
+
+/* footer styles start */
+
+
+
+/* footer styles start */

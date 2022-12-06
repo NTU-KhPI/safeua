@@ -9,6 +9,8 @@ use App\Http\Controllers\Map\MapController;
 use App\Http\Controllers\Histories\HistoriesController;
 
 use App\Http\Controllers\PhotoArchives\PhotoViewController;
+use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +25,7 @@ use App\Http\Controllers\PhotoArchives\PhotoViewController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -45,3 +47,7 @@ Route::get('/region/id={region}', [HistoriesController::class, 'HistoriesByRegio
 Route::get('/histories/search', [HistoriesController::class, 'search'])->name('histories.search');
 
 require __DIR__ . '/auth.php';
+
+Route::get('/volonter', function () {
+    return view('help.volonter');
+})->name('volonter');

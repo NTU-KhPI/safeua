@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(5)->create();
         $this->call(RegionSeeder::class);
-        // Photo::factory(50)->create();
-        // History::factory(50)->create();
+        Photo::factory(50)->create();
+        History::factory(50)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

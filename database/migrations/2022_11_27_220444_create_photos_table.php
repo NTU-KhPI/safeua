@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('photo_id');
             $table->string('tag');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('region_id')->nullable();
             $table->foreign('region_id')->references('region_id')->on('regions')->onDelete('cascade')->onUpdate('cascade');
             $table->string("file_location");
@@ -32,6 +34,8 @@ return new class extends Migration
     {
         Schema::table('photos', function (Blueprint $table)
         {
+            $table->dropForeign('photos_user_id_foreign');
+            $table->dropColumn('user_id');
             $table->dropForeign('photos_region_id_foreign');
             $table->dropColumn('region_id');
         });

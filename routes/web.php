@@ -28,9 +28,9 @@ Route::get('/profile', function () {
 
 Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('/photo-archives', PhotoViewController::class);
-Route::resource('/my-photos', MyPhotoViewController::class);
-// Route::resource('/test', PhotoViewController::class);
+Route::get('/photo-archives', [PhotoViewController::class, 'index'])->name('photos-index');
+Route::post('/photo-archives', [PhotoViewController::class, 'store'])->name('photos-store');
+Route::get('/my-photos', [PhotoViewController::class, 'indexMy'])->name('my-photos');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

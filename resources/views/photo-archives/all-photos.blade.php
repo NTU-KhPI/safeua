@@ -10,7 +10,7 @@
         @endif --}}
 
         <nav class="menu__photo">
-            <a href="" class="menu_photo_link active">Всі світлини</a>
+            <a href="{{route('photos-index')}}" class="menu_photo_link active">Всі світлини</a>
             @php
                 $lock = "locked"
             @endphp
@@ -19,9 +19,10 @@
                     @php
                         $lock = "unlocked"
                     @endphp
+                    
                 @endauth
             @endif
-            <a href="" class="menu_photo_link {{$lock}}">Мої світлини</a>
+            <a href="{{route('my-photos')}}" class="menu_photo_link {{$lock}}">Мої світлини</a>
         </nav>
 
         <div class="menu__filters">
@@ -43,17 +44,18 @@
         </div>
 
         <section class="section__photos">
-            @if ($history->count())
+            @if ($photos->count())
                 <div class="section__grid">
-                    @foreach ($history as $item)
+                    @foreach ($photos as $photo)
                         <figure class="grid__items">
-                            <img src="{{ asset($item->photo->value('file_location')) }}" alt="" class="items__img">
-                            <img src="{{ asset($item->photo->value('file_location')) }}" alt="" class="back__img">
-                            <figcaption class="items__figcaption">{{$item->title}}</figcaption>
+                            <img src="{{ asset($photo->file_location) }}" alt="" class="items__img">
+                            <img src="{{ asset($photo->file_location) }}" alt="" class="back__img">
+                            <figcaption class="items__figcaption">{{$photo->history->value('title')}}</figcaption>
                         </figure>
                     @endforeach
                 </div>
-                <button class="load_more">Показати ще</button>
+                {{-- <button class="load_more">Показати ще</button> --}}
+                @include('photo-archives.paginate')
             @else
                 <p class="text-center">Нічого немає</p>
             @endif
@@ -69,7 +71,7 @@
                             <a href="#" class="close"><div class="triangle-left"></div></a>
                             <div class="title-of-window">Поділитися світлиною</div>
                         </div>
-                        <form class="form_window" method="POST" action="{{ route('photo-archives.store') }}" enctype="multipart/form-data">
+                        <form class="form_window" method="POST" action="{{route('photos-store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="main_block_window">
                                 <div class="block_img_window">

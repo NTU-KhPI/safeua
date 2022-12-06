@@ -1,12 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\PhotoArchives\PhotoUploadController;
-use App\Http\Controllers\PhotoArchives\PhotoViewController;
+use App\Http\Controllers\Profile\ProfileController;
 
 use App\Http\Controllers\Map\MapController;
-use App\Http\Controllers\Profile\ProfileController;
+use App\Http\Controllers\Histories\HistoriesController;
+
+use App\Http\Controllers\PhotoArchives\PhotoViewController;
+use App\Http\Controllers\PhotoArchives\PhotoUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +44,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/map', [MapController::class, 'index'])->name('map');
-// Route::get('/histories/{pageNum}', [MapController::class, 'loadMoreHistories'])->name('map.moreHistories');
-//Route::get('/histories', [MapController::class, 'latestHistory'])->name('map.moreHistories');
+Route::get('/histories', [HistoriesController::class, 'index'])->name('histories');
+Route::get('/region/id={region}', [HistoriesController::class, 'HistoriesByRegion'])->name('historiesByRegion');
 
-require __DIR__.'/auth.php';
+Route::get('/histories/search', [HistoriesController::class, 'search'])->name('histories.search');
+
+require __DIR__ . '/auth.php';

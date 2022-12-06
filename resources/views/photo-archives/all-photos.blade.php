@@ -1,7 +1,9 @@
+@section('title')Всі фото@endsection
+
 <x-guest-layout>
     <div class="container">
         {{-- <h1>main photos</h1>
-        
+
         @if (Route::has('login'))
             @auth
                 <h2>your ID</h2>
@@ -42,7 +44,7 @@
             @else
                 <p class="text-center">Нічого немає</p>
             @endif
-            
-        </section>    
+
+        </section>
     </div>
 </x-guest-layout>

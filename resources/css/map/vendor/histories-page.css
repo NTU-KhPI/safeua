@@ -33,7 +33,7 @@
         @media(max-width:$bp760) {
             max-width:350px;
 			width: 100%;
-			justify-self: start;
+			justify-self: flex-start;
 		}
 		form {
 			display: flex;

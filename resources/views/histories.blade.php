@@ -1,10 +1,7 @@
-@extends('map.layout')
-
 @section('title')Історії@endsection
 
-@section('content')
+<x-app-layout>
 
-<main class="main">
     {{-- Історії --}}
     <section class="histories-page">
         <div
@@ -12,7 +9,7 @@
             <!-- Поиск -->
             <div class="histories-page__search">
                 <form action="{{ route('histories.search') }}" method="get"  class="histories-search-form">
-                    <input type="text" id="histories_search" name="histories_search" placeholder="Шукати історії" autocomplete="off"
+                    <input type="text" id="histories_search" name="q" placeholder="Шукати історії" autocomplete="off"
                         class="">
                     <button type="submit"><img src="{{ asset('img/map/map/search.svg') }}" alt="Пошук"></button>
                 </form>
@@ -60,11 +57,20 @@
                 function loadMoreHistories(currentPage){
                     $.ajax(
                     {
+                        @if(isset($regionId))
                         @if(Str::contains($uri, '?'))
                         url:'{{ url($uri, $regionId) }}&page=' + currentPage,
                         @else
                         url:'{{ url($uri, $regionId) }}?page=' + currentPage,
                         @endif
+                        @else
+                        @if(Str::contains($uri, '?'))
+                        url:'{{ url($uri) }}&page=' + currentPage,
+                        @else
+                        url:'{{ url($uri) }}?page=' + currentPage,
+                        @endif
+                        @endif
+
                         type: "GET",
                         beforeSend: function()
                         {
@@ -94,8 +100,5 @@
         </script>
         @endisset
     </section>
-</main>
 
-<!-- Модальные элементы -->
-
-@endsection
+</x-app-layout>

@@ -5,10 +5,10 @@
 @layer base{}
 
 @layer components {
-	.posts-page__post:not(:last-child){
+	.histories-page__history:not(:last-child) {
 		@apply mb-[70px] xl:mb-[62px] lg:mb-14 md:mb-11 sm:mb-9;
 	}
-	.posts-page .post{
+	.histories-page .history{
 		@apply text-lg xl:text-[17px] lg:text-base md:text-[15px] sm:text-sm;
 		&__body{
 			@apply gap-y-8 xl:gap-y-7 lg:gap-y-6 md:gap-y-5 sm:gap-y-3;

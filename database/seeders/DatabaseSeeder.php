@@ -3,11 +3,14 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 use \App\Models\History;
 use \App\Models\Photo;
 use \App\Models\User;
+use App\Models\City;
+use \App\Models\History;
 
 class DatabaseSeeder extends Seeder
 {

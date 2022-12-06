@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
+use App\Models\User;
 use App\Models\Region;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class City extends Model
 {
@@ -15,6 +16,11 @@ class City extends Model
 
     public function region()
     {
-       return $this->belongsTo(Region::class, 'region_id', 'region_id');
+        return $this->belongsTo(Region::class, 'region_id', 'region_id');
+    }
+
+    public function city()
+    {
+        return $this->hasMany(User::class, 'region_id', 'region_id');
     }
 }

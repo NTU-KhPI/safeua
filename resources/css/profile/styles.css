@@ -1,0 +1,15 @@
+.profile-input, .profile-input:focus, .profile-input:active{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: #6c757d !important;
+    font-size: 15px !important;
+    width: 100%;
+}
+.btn-primary{
+    color: #007bff !important;
+}
+.btn-primary:hover{
+    color: #ffffff !important;
+}

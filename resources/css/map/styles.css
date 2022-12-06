@@ -10,7 +10,7 @@
 /* Части страницы */
 @import "vendor/custom-select";
 @import "vendor/map-page";
-@import "vendor/posts-page";
+@import "vendor/histories-page";
 
 /* Tailwindcss */
 @import "tailwind";

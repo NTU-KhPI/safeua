@@ -10,6 +10,7 @@
 @import "photo-archives/photo-paginate.css";
 @import "photo-archives/modal-add-photo.css";
 @import "tmp/footer-style.css";
+@import "profile/styles";
 
 @tailwind base;
 @tailwind components;

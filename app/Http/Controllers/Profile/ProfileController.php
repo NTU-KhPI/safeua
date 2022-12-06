@@ -2,27 +2,30 @@
 
 namespace App\Http\Controllers\Profile;
 
-use App\Http\Controllers\Controller;
-use App\Models\Region;
 use App\Models\User;
+use App\Models\Region;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
     public function index(Request $request)
     {
-        $user = auth()->user();
+        if (Auth::check()) {
+            $user = auth()->user();
 
-        $regions = Region::select([
-            'region_id',
-            'name'
-        ])->get();
+            $regions = Region::select([
+                'region_id',
+                'name'
+            ])->get();
 
-        return view('profile.profile', [
-            'user' => $user,
-            'regions' => $regions
-        ]);
+            return view('profile.profile', [
+                'user' => $user,
+                'regions' => $regions
+            ]);
+        } else return redirect()->route('login');
     }
 
     public function update(Request $request)

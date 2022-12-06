@@ -17,12 +17,18 @@
     padding-bottom: 0;
     border-bottom: 2px solid #4169E1;
 }
-.active{
+.menu_photo_link.active{
     pointer-events: none;
+}
+.menu_photo_link.locked{
+    pointer-events: none;
+    color: #a7a7a7;
 }
 
 .menu__filters{
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .btn__filters{

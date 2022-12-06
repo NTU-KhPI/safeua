@@ -11,9 +11,9 @@
             <nav class="menu__body">
                 <ul class="menu__list">
                     <li class="menu__items"><a href="/history" class="menu__link">Історії</a></li>
-                    <li class="menu__items"><a href="/map" class="menu__link">Регіони</a></li>
+                    <li class="menu__items"><a href="{{route('map')}}" class="menu__link">Регіони</a></li>
                     <li class="menu__items"><a href="/help" class="menu__link">Допомога</a></li>
-                    <li class="menu__items"><a href="/photo-archives" class="menu__link">Фото архів</a></li>
+                    <li class="menu__items"><a href="{{route('photos-index')}}" class="menu__link">Фото архів</a></li>
                 </ul>
             </nav>
             <div class="menu__btn">

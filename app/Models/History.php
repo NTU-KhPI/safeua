@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Region;
 use App\Models\User;
+use App\Models\Photo;
 use App\Filters\QueryFilter;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -19,14 +20,18 @@ class History extends Model
 
     public function region()
     {
-        return $this->belongsTo(Region::class, 'region_id', 'region_id');
+       return $this->belongsTo(Region::class, 'region_id', 'region_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id', 'user_id');
+       return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
 
+    public function photo()
+    {
+        return $this->belongsToMany(Photo::class, 'history_photo', 'history_id', 'photo_id');
+    }
 
     // public function scopeFilter(Builder $builder, QueryFilter $filter){
     //     return $filter->apply($builder);

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Models\History;
 
 class ProfileController extends Controller
 {
@@ -21,9 +22,13 @@ class ProfileController extends Controller
                 'name'
             ])->get();
 
+            $histories = History::where('user_id', $user->user_id)
+                ->orderBy('created_at', 'desc')->get();
+
             return view('profile.profile', [
                 'user' => $user,
-                'regions' => $regions
+                'regions' => $regions,
+                'histories' => $histories
             ]);
         } else return redirect()->route('login');
     }
@@ -37,6 +42,7 @@ class ProfileController extends Controller
             'name_s' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', $request->get('email') !== $user->email ? 'unique:users' : ''],
+            'about_me' => ['nullable', 'string'],
             //'password' => ['required', 'confirmed', Rules\Password::defaults()],
             //'region_id' => ['numeric'],
         ]);
@@ -45,6 +51,7 @@ class ProfileController extends Controller
         $user->name_s = $request->get('name_s');
         $user->phone = $request->get('phone');
         $user->email = $request->get('email');
+        $user->about_me = $request->get('about_me');
         $user->save();
 
         return redirect()->route('profile');

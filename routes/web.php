@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\Profile\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Profile\ProfileController;
 
 use App\Http\Controllers\Map\MapController;
 use App\Http\Controllers\Histories\HistoriesController;
+use App\Http\Controllers\Histories\HistoryController;
 
 use App\Http\Controllers\PhotoArchives\PhotoViewController;
 use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
@@ -42,6 +43,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/map', [MapController::class, 'index'])->name('map');
 Route::get('/histories', [HistoriesController::class, 'index'])->name('histories');
+Route::get('/history/{id}', [HistoryController::class, 'index'])->name('history');
 Route::get('/region/id={region}', [HistoriesController::class, 'HistoriesByRegion'])->name('historiesByRegion');
 
 Route::get('/histories/search', [HistoriesController::class, 'search'])->name('histories.search');

@@ -10,7 +10,8 @@
 @import "photo-archives/all-photos.css";
 @import "photo-archives/photo-paginate.css";
 @import "photo-archives/modal-add-photo.css";
-@import "profile/styles";
+@import "profile/styles.css";
+@import "home/styles.css";
 
 @tailwind base;
 @tailwind components;

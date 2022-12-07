@@ -13,6 +13,7 @@
     <!-- Scripts and Styles-->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- Icons --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="{{ asset('img/logo.ico') }}">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="{{ asset('img/logo.ico') }}">
     <title>@yield('title')</title>
@@ -29,11 +30,13 @@
         <div class="header__container container">
             <!-- Лого -->
             <div class="header__logo logo">
-                <div class="logo__image"><img src="{{ asset('img/logo-light.svg') }}" alt="Logo"></div>
-                <div class="logo__caption">
-                    <span class="title">SafeUA</span>
-                    <span class="subtitle">Від людей для людей</span>
-                </div>
+                <a href="{{route('home', [], false)}}" class="d-flex gap-2">
+                    <div class="logo__image"><img src="{{ asset('img/logo-light.svg') }}" alt="Logo"></div>
+                    <div class="logo__caption" style="color: #fff">
+                        <span class="title">SafeUA</span>
+                        <span class="subtitle">Від людей для людей</span>
+                    </div>
+                </a>
             </div>
             <!-- Меню -->
             <div class="header__menu menu">

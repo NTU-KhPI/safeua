@@ -1,9 +1,9 @@
 <header class="header flex-shrink-0">
     <div class="container">
         <div class="header__rowLogo">
-            <a href="/"><img src="../img/Logo.svg" alt="logo" class="header__logo"></a>
+            <a href="{{route('home', [], false)}}"><img src="../img/Logo.svg" alt="logo" class="header__logo"></a>
             <div class="rowLogo__texts">
-                <a href="/" class="text_logo">SafeUA</a><br>
+                <a href="{{route('home', [], false)}}" class="text_logo">SafeUA</a><br>
                 <span class="text_slogan">Від людей для людей</span>
             </div>
         </div>

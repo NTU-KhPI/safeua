@@ -1,7 +1,7 @@
 @section('title')Профіль@endsection
-@section('styles')<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">@endsection
-@section('scripts') <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>@endsection
+{{--@section('styles')<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">@endsection--}}
+{{--@section('scripts') <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>--}}
+{{--<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>@endsection--}}
 
 <x-app-layout>
     <section>
@@ -12,7 +12,8 @@
                         <div class="card-body text-center">
 {{--                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"--}}
 {{--                                 class="rounded-circle img-fluid" style="width: 150px;">--}}
-                            <div style="width: 100px; height: 100px; border-radius: 50px; background: rebeccapurple; margin: 0 auto"></div>
+
+                            <div style="width: 100px; height: 100px; border-radius: 50px; background: url({{asset('img/users/'.$user->avatar)}}) center center no-repeat; background-size: cover; margin: 0 auto"></div>
                             <h5 class="my-3">{{$user->name_f . ' ' . $user->name_s}}</h5>
 {{--                            <p class="text-muted mb-1">Simple ukrainian boy</p>--}}
 {{--                            <p class="text-muted mb-4">Kharkiv district</p>--}}
@@ -73,47 +74,47 @@
 {{--                            <hr>--}}
                             <div class="row py-3">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Ім'я</p>
+                                    <p class="mb-0">{{__('user.name_f')}}</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" name="name_f" class="profile-input" placeholder="Введіть ваше ім'я" value="{{$user->name_f}}" required>
+                                    <input type="text" name="name_f" class="profile-input" placeholder="{{__('user.name_f_placeholder')}}" value="{{$user->name_f}}" required>
                                 </div>
                             </div>
                             <hr>
                             <div class="row py-3">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Прізвище</p>
+                                    <p class="mb-0">{{__('user.name_s')}}</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" name="name_s" class="profile-input" placeholder="Введіть ваше прізвище" value="{{$user->name_s}}" required>
+                                    <input type="text" name="name_s" class="profile-input" placeholder="{{__('user.name_s_placeholder')}}" value="{{$user->name_s}}" required>
                                 </div>
                             </div>
                             <hr>
                             <div class="row py-3">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Email</p>
+                                    <p class="mb-0">{{__('user.email')}}</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" name="email" class="profile-input" placeholder="Введіть ваш email" value="{{$user->email}}" required>
+                                    <input type="text" name="email" class="profile-input" placeholder="{{__('user.email_placeholder')}}" value="{{$user->email}}" required>
                                 </div>
                             </div>
                             <hr>
                             <div class="row py-3">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Телефон</p>
+                                    <p class="mb-0">{{__('user.phone')}}</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" name="phone" class="profile-input" placeholder="Введіть ваш телефон" value="{{$user->phone}}">
+                                    <input type="text" name="phone" class="profile-input" placeholder="{{__('user.phone_placeholder')}}" value="{{$user->phone}}">
                                 </div>
                             </div>
                             <hr>
                             <div class="row py-3">
                                 <div class="col-sm-3">
-                                    <p class="mb-0">Регіон</p>
+                                    <p class="mb-0">{{__('user.region')}}</p>
                                 </div>
                                 <div class="col-sm-9">
                                     <select name="region_id" class="profile-input">
-                                        <option value="0">Не вибрано</option>
+                                        <option value="0">{{__('common.not_chosen')}}</option>
                                         @foreach($regions as $region)
                                             <option value="{{$region->region_id}}" @if($region->id === $user->region_id) selected @endif>{{$region->name}}</option>
                                         @endforeach
@@ -126,32 +127,44 @@
                             <div class="col-md-12">
                                 <div class="card mb-4 mb-md-0">
                                     <div class="card-body">
-                                        <p class="mb-4">About me</p>
-                                        <textarea class="profile-input" name="about_us" placeholder="Розкажіть про себе">{{$user->about_us}}</textarea>
+                                        <p class="mb-4">{{__('common.about_me')}}</p>
+                                        <textarea class="profile-input" name="about_me" placeholder="Розкажіть про себе">{{$user->about_me}}</textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-4">
-                            <div class="col-md-12">
-                                <div class="card mb-4 mb-md-0">
-                                    <div class="card-body">
-                                        <p class="mb-4"> Тут буде моя галерея :)</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="row mb-4">--}}
+{{--                            <div class="col-md-12">--}}
+{{--                                <div class="card mb-4 mb-md-0">--}}
+{{--                                    <div class="card-body">--}}
+{{--                                        <p class="mb-4"> Тут буде моя галерея :)</p>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+                        @if(count($histories))
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card mb-4 mb-md-0">
                                     <div class="card-body">
-                                        <p class="mb-4"> А тут історії :)</p>
+                                        <p class="mb-4">{{__('common.my_histories')}}</p>
+                                        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-lg-4">
+                                            @foreach($histories as $history)
+                                                <div class="col">
+                                                    <a href="{{route('history', ['id' => $history->history_id], false)}}">
+                                                        <img src="{{$history->preview}}" alt="preview">
+                                                        <h4>{{$history->title}}</h4>
+                                                    </a>
+                                                </div>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endif
 
-                        <button type="submit" class="btn bg-emerald-500">Dick</button>
+                        <button type="submit" class="btn btn-primary mt-4">{{__(('common.save'))}}</button>
                     </form>
                 </div>
             </div>

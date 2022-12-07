@@ -18,7 +18,7 @@
                             <img src="{{ asset($photo->file_location) }}" alt="" class="items__img">
                             <img src="{{ asset($photo->file_location) }}" alt="" class="back__img">
                             {{-- <figcaption class="items__figcaption">{{$photo->history->value('title')}}</figcaption> --}}
-                            <figcaption class="items__figcaption">{{$photo->photo_id}}</figcaption>
+                            <figcaption class="items__figcaption">{{$photo->history->value('title')}}<hr>{{ $photo->region->title }}</figcaption>
                         </figure>                  
                     @endforeach
                 </div>
@@ -33,6 +33,7 @@
         </section> 
 
         @include('photo-archives.modal-publish')
+        @include('photo-archives.modal-photo')
     </div>
        
     @endauth

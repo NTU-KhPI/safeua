@@ -33,7 +33,7 @@
                         <figure class="grid__items">
                             <img src="{{ asset($photo->file_location) }}" alt="" class="items__img">
                             <img src="{{ asset($photo->file_location) }}" alt="" class="back__img">
-                            <figcaption class="items__figcaption">{{$photo->history->value('title')}}<hr>{{ $photo->region->title }}</figcaption>
+                            <figcaption class="items__figcaption">{{$photo->history->value('title')}}<hr>{{ $photo->region->title }}<hr>{{ $photo->created_at }}</figcaption>
                         </figure>
                     @endforeach
                 </div>
@@ -46,5 +46,6 @@
         </section> 
 
         @include('photo-archives.modal-publish')
+        @include('photo-archives.modal-photo')
     </div>
 </x-guest-layout>

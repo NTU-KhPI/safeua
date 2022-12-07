@@ -20,11 +20,11 @@
 
 <body>
 
-    @include('layouts.footer')
+    @include('layouts.vendor.footer')
 
     @yield('content')
 
-    @include('layouts.footer')
+    @include('layouts.vendor.footer')
 </body>
 
 </html>

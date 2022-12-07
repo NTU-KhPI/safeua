@@ -22,13 +22,13 @@
 
 <body style="font-family: 'Nunito', sans-serif;">
 
-    @include('layouts.header')
+    @include('layouts.vendor.header')
 
     <main class="main">
         {{ $slot }}
     </main>
 
-    @include('layouts.footer')
+    @include('layouts.vendor.footer')
 
     @yield('scripts')
     @yield('modals')

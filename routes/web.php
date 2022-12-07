@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PhotoArchives\PhotoViewController;
 use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
 
-use App\Http\Controllers\MapController;
+use App\Http\Controllers\Map\MapController;
+use App\Http\Controllers\Profile\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,10 @@ Route::get('/dashboard', [AuthController::class, 'index'])->middleware(['auth', 
 Route::get('/photo-archives', [PhotoViewController::class, 'index'])->name('photos-index');
 Route::post('/photo-archives', [PhotoViewController::class, 'store'])->name('photos-store');
 Route::get('/my-photos', [PhotoViewController::class, 'indexMy'])->name('my-photos');
+
+Route::get('/photo-archives/sortByOld', [PhotoViewController::class, 'indexSortDesc'])->name('photos-index-sortDesc');
+Route::get('/my-photos/sortByOld', [PhotoViewController::class, 'indexMySortDesc'])->name('my-photos-sortDesc');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

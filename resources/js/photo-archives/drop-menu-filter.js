@@ -12,3 +12,18 @@ window.onclick = function(event) {
         }
     }
 }
+
+const btnFilter = document.querySelector(".btn-menu-filter");
+
+if(btnSort != null){
+    btnFilter.addEventListener("click", function(e){
+        btnFilter.classList.toggle("_active");
+    });
+}  
+window.onclick = function(event) {
+    if(btnFilter != null){
+        if (!event.target.matches('.btn-menu-filter') && btnFilter.classList.contains('_active')) {
+            btnFilter.classList.remove('_active');
+        }
+    }
+}

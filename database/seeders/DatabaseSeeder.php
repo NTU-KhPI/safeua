@@ -6,7 +6,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use \App\Models\History;
 use \App\Models\Photo;
 use \App\Models\User;
 use App\Models\City;

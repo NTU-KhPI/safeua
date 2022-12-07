@@ -18,7 +18,7 @@ class MapController extends Controller
             $latestHistories[] = History::where('region_id', $region->region_id)->latest()->first();
         }
 
-        return view('map', [
+        return view('map.map', [
             'latestHistories' => $latestHistories,
         ]);
     }

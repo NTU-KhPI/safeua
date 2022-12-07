@@ -42,7 +42,7 @@ $contentcolor: #4169E1;
 /* Header */
 $headerwidth: $cntbp;
 $headerheight: 92px;
-$headercolor: $contentcolor;
+$headercolor: #4169e1;
 $headertxtcolor: $lighttxtcolor;
 $burgerbp: $bp840;
 $burgerbgc: #ada86de1;

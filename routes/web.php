@@ -28,6 +28,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
@@ -42,10 +46,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/map', [MapController::class, 'index'])->name('map');
-Route::get('/histories', [HistoriesController::class, 'index'])->name('histories');
-Route::get('/history/{id}', [HistoryController::class, 'index'])->name('history');
 Route::get('/region/id={region}', [HistoriesController::class, 'HistoriesByRegion'])->name('historiesByRegion');
 
+Route::get('/histories', [HistoriesController::class, 'index'])->name('histories');
+Route::get('/history/{id}', [HistoryController::class, 'index'])->name('history');
 Route::get('/histories/search', [HistoriesController::class, 'search'])->name('histories.search');
 
 require __DIR__ . '/auth.php';

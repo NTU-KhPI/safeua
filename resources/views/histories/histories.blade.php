@@ -5,7 +5,7 @@
     {{-- Історії --}}
     <section class="histories-page">
         <div
-            class="histories-page__container container py-[70px] xl:py-14 lg:py-12 md:py-10 sm:py-8 gap-y-20 xl:gap-y-16 lg:gap-y-13 md:gap-y-10 sm:gap-y-8">
+            class="histories-page__container container py-[70px] xl:py-14 lg:py-12 md:py-10 sm:py-8 gap-y-18 xl:gap-y-16 lg:gap-y-13 md:gap-y-10 sm:gap-y-8">
             <!-- Поиск -->
             <div class="histories-page__search">
                 <form action="{{ route('histories.search') }}" method="get"  class="histories-search-form">

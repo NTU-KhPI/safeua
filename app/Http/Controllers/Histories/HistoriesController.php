@@ -25,7 +25,7 @@ class HistoriesController extends Controller
             ]);
         }
 
-        return view('histories', [
+        return view('histories.histories', [
             'histories' => $histories,
             'uri' => $request->getUri(),
         ]);
@@ -53,7 +53,7 @@ class HistoriesController extends Controller
             ]);
         }
 
-        return view('histories', [
+        return view('histories.histories', [
             'histories' => $histories,
             'regionId' => $regionId,
             'regionName' => $regionName,
@@ -85,7 +85,7 @@ class HistoriesController extends Controller
             ]);
         }
 
-        return view('histories', [
+        return view('histories.histories', [
             'histories' => $histories,
             'searchLine' => $searchLine,
             'uri' => $request->getUri(),

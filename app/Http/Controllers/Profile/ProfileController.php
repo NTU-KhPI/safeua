@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Profile;
 
 use App\Models\User;
 use App\Models\Region;
+use App\Models\History;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Models\History;
 
 class ProfileController extends Controller
 {
@@ -53,7 +53,6 @@ class ProfileController extends Controller
         $user->email = $request->get('email');
         $user->about_me = $request->get('about_me');
         $user->save();
-
         return redirect()->route('profile');
     }
 }

@@ -1,5 +1,4 @@
 .histories-page {
-    padding-top: calc($headerheight + 1.5em);
 	background-color: $mainbgc;
 	&__container {
 		padding-top: 70px;

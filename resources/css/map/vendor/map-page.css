@@ -2,10 +2,10 @@
 
 
 .map-page {
-	padding-top: $headerheight;
 	background-color: $mainbgc;
 
 	&__container {
+        padding-top: 1em;
 		min-height: calc(100vh - $headerheight);
 		min-height: inherit;
 		padding-top: 70px;

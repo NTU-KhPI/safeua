@@ -5,8 +5,8 @@ export function GoOnTopbyScroll(startheight = 1500) {
         const footerBtn = $('.footer__button').find('a');
         $(footerBtn).click(function () {
             $("body,html").animate({
-                scrollTop: 0
-            }, 750);
+                scrollTop: 0,
+            }, 700);
             return false;
         });
     }

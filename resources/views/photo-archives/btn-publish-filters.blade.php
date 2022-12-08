@@ -35,12 +35,12 @@
     </form>
     <div class="filters">
         <div class="dropdown-group">
-            <button type="button" class="btn-menu-sort dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn-menu-sort">
                 Сортувати
             </button>
-            <div class="dropdown-menu-sort dropdown-menu">
-                <a href="{{route($curentRoute)}}" class="dropdown-item-sort dropdown-item" type="button">Спочатку нові</a>
-                <a href="{{route($curentRouteDesc)}}" class="dropdown-item-sort dropdown-item">Спочатку старі</a>
+            <div id="DropdownSort" class="dropdown-menu-sort">
+                <a href="{{route($curentRoute)}}" class="dropdown-item-sort" type="button">Спочатку нові</a>
+                <a href="{{route($curentRouteDesc)}}" class="dropdown-item-sort">Спочатку старі</a>
             </div>
         </div>
         {{-- <div class="dropdown-group">

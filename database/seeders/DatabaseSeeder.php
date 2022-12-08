@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         City::factory(100)->create();
         User::factory(10)->create();
         History::factory(200)->create();
-        Photo::factory(50)->create();
+        Photo::factory(200)->create();
     }
 }

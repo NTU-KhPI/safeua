@@ -35,7 +35,7 @@
                         <figure class="grid__items">
                             <img src="{{ asset($photo->file_location) }}" alt="" class="items__img">
                             <img src="{{ asset($photo->file_location) }}" alt="" class="back__img">
-                            <figcaption class="items__figcaption">{{$photo->history->value('title')}}<hr>{{ $photo->region->title }}<hr>{{ $photo->created_at }}</figcaption>
+                            <figcaption class="items__figcaption">{{$photo->history->value('title')}}<hr>{{ $photo->region->name }}<hr>{{ $photo->created_at }}</figcaption>
                         </figure>
                     @endforeach
                 </div>

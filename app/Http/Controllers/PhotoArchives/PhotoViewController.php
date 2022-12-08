@@ -17,6 +17,7 @@ class PhotoViewController extends Controller
         // $history = History::Paginate(9);
         $photos = Photo::orderBy('created_at', 'desc')->paginate(27);
         $regions = Region::all();
+
         return view("photo-archives.all-photos", compact('photos', 'regions'));
         // return view("photo-archives.test", compact('history', 'photos', 'regions'));
     }

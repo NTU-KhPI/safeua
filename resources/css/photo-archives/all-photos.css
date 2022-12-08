@@ -2,7 +2,6 @@
     margin: 30px 0;
 
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 4rem;
@@ -136,5 +135,13 @@
 @media (min-width: 900px) {
     .section__grid { 
         grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 600px){
+    .menu__filters, .menu__photo{
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
     }
 }

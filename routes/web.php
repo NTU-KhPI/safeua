@@ -11,7 +11,6 @@ use App\Http\Controllers\Histories\HistoriesController;
 use App\Http\Controllers\PhotoArchives\PhotoViewController;
 use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,6 +34,10 @@ Route::post('/profile', [ProfileController::class, 'update'])->name('profile.upd
 Route::get('/photo-archives', [PhotoViewController::class, 'index'])->name('photos-index');
 Route::post('/photo-archives', [PhotoViewController::class, 'store'])->name('photos-store');
 Route::get('/my-photos', [PhotoViewController::class, 'indexMy'])->name('my-photos');
+
+Route::get('/photo-archives/sortByOld', [PhotoViewController::class, 'indexSortDesc'])->name('photos-index-sortDesc');
+Route::get('/my-photos/sortByOld', [PhotoViewController::class, 'indexMySortDesc'])->name('my-photos-sortDesc');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

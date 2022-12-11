@@ -15,19 +15,29 @@ class PhotoViewController extends Controller
     {
         // $history = History::all();
         // $history = History::Paginate(9);
-        $photos = Photo::Paginate(27);
+        $photos = Photo::orderBy('created_at', 'desc')->paginate(27);
         $regions = Region::all();
+
         return view("photo-archives.all-photos", compact('photos', 'regions'));
         // return view("photo-archives.test", compact('history', 'photos', 'regions'));
     }
-    public function indexMy(Request $request)
-    {
-        if (Auth::check()) {
-            $user_id = Auth::user()->user_id;
-            $photos = Photo::where('user_id', $user_id)->paginate(27);
-            $regions = Region::all();
-            return view("photo-archives.my-photos", compact('photos', 'regions'));
-        } else return redirect()->route('photos-index');
+    public function indexMy(Request $request){
+        $user_id = Auth::user()->user_id;
+        $photos = Photo::where('user_id', $user_id)->orderBy('created_at', 'desc')->paginate(27);
+        $regions = Region::all();
+        return view("photo-archives.my-photos", compact('photos', 'regions'));           
+    }
+
+    public function indexSortDesc(Request $request){
+        $photos = Photo::orderBy('created_at')->paginate(27);
+        $regions = Region::all();
+        return view("photo-archives.all-photos", compact('photos', 'regions'));
+    }
+    public function indexMySortDesc(Request $request){
+        $user_id = Auth::user()->user_id;
+        $photos = Photo::where('user_id', $user_id)->orderBy('created_at')->paginate(27);
+        $regions = Region::all();
+        return view("photo-archives.my-photos", compact('photos', 'regions'));
     }
 
     public function store(Request $request)

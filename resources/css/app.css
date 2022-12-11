@@ -7,9 +7,11 @@
 /* @import "tmp/header-style.css"; */
 /* @import "tmp/footer-style.css"; */
 
+@import "photo-archives/filters.css";
 @import "photo-archives/all-photos.css";
 @import "photo-archives/photo-paginate.css";
 @import "photo-archives/modal-add-photo.css";
+@import "photo-archives/modal-photo.css";
 @import "profile/styles.css";
 @import "home/styles.css";
 

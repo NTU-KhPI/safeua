@@ -7,11 +7,9 @@ use App\Http\Controllers\Auth\AuthController;
 
 use App\Http\Controllers\Map\MapController;
 use App\Http\Controllers\Histories\HistoriesController;
-use App\Http\Controllers\Histories\HistoryController;
 
 use App\Http\Controllers\PhotoArchives\PhotoViewController;
 use App\Http\Controllers\PhotoArchives\MyPhotoViewController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -37,13 +35,17 @@ Route::get('/photo-archives', [PhotoViewController::class, 'index'])->name('phot
 Route::post('/photo-archives', [PhotoViewController::class, 'store'])->name('photos-store');
 Route::get('/my-photos', [PhotoViewController::class, 'indexMy'])->name('my-photos');
 
+Route::get('/photo-archives/sortByOld', [PhotoViewController::class, 'indexSortDesc'])->name('photos-index-sortDesc');
+Route::get('/my-photos/sortByOld', [PhotoViewController::class, 'indexMySortDesc'])->name('my-photos-sortDesc');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/map', [MapController::class, 'index'])->name('map');
 Route::get('/histories', [HistoriesController::class, 'index'])->name('histories');
-Route::get('/history/{id}', [HistoryController::class, 'index'])->name('history');
+Route::get('/history/{id}', [HistoriesController::class, 'index'])->name('history');
 Route::get('/region/id={region}', [HistoriesController::class, 'HistoriesByRegion'])->name('historiesByRegion');
 
 Route::get('/histories/search', [HistoriesController::class, 'search'])->name('histories.search');

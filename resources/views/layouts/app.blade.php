@@ -43,10 +43,10 @@
                 <div class="menu__burger burger-menu"><span></span></div>
                 <nav class="menu__body">
                     <ul class="menu__list">
-                        <li><a href="">Історії</a></li>
+                        <li><a href="{{ route('histories') }}">Історії</a></li>
                         <li><a href="">Регіони</a></li>
-                        <li><a href="">Допомога</a></li>
-                        <li><a href="">Фото архів</a></li>
+                        <li><a href="{{ route('volonter') }}">Допомога</a></li>
+                        <li><a href="{{ route('photos-index') }}">Фото архів</a></li>
                         <li><a href="{{ route('map') }}">Мапа</a></li>
                     </ul>
                 </nav>
@@ -115,11 +115,11 @@
             <!-- Навигация -->
             <nav class="footer__menu menu">
                 <ul class="menu__list">
-                    <li><a href="">Історії</a></li>
-                    <li><a href="">Регіони</a></li>
-                    <li><a href="">Допомога</a></li>
-                    <li><a href="">Фото архів</a></li>
-                    <li><a href="{{ route('map') }}">Мапа</a></li>
+                    <li><a href="{{ route('histories') }}">Історії</a></li>
+                        <li><a href="">Регіони</a></li>
+                        <li><a href="{{ route('volonter') }}">Допомога</a></li>
+                        <li><a href="{{ route('photos-index') }}">Фото архів</a></li>
+                        <li><a href="{{ route('map') }}">Мапа</a></li>
                 </ul>
             </nav>
             <!-- Условия пользования -->

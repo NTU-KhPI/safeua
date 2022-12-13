@@ -44,7 +44,7 @@ class ProfileController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', $request->get('email') !== $user->email ? 'unique:users' : ''],
             'about_me' => ['nullable', 'string'],
             //'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            //'region_id' => ['numeric'],
+            'region_id' => ['numeric', 'nullable'],
         ]);
 
         $user->name_f = $request->get('name_f');
@@ -52,6 +52,7 @@ class ProfileController extends Controller
         $user->phone = $request->get('phone');
         $user->email = $request->get('email');
         $user->about_me = $request->get('about_me');
+        $user->region_id = $request->get('region_id');
         $user->save();
 
         return redirect()->route('profile');

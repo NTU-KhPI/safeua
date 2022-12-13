@@ -127,7 +127,7 @@
                                             <option value="0">{{__('common.not_chosen')}}</option>
                                             @foreach($regions as $region)
                                                 <option value="{{$region->region_id}}"
-                                                        @if($region->id === $user->region_id) selected @endif>{{$region->name}}</option>
+                                                        @if($region->region_id === $user->region_id) selected @endif>{{$region->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
